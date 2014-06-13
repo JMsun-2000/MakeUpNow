@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5401194ACBA5006E18FF /* OrganBase.m */; };
+		7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5404194AD05F006E18FF /* LeftEyeData.m */; };
 		7BC4210917B5FF0300C79657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210817B5FF0300C79657 /* UIKit.framework */; };
 		7BC4210B17B5FF0300C79657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210A17B5FF0300C79657 /* Foundation.framework */; };
 		7BC4210D17B5FF0300C79657 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210C17B5FF0300C79657 /* CoreGraphics.framework */; };
@@ -57,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7BAB5400194ACBA5006E18FF /* OrganBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganBase.h; path = DataMana/OrganBase.h; sourceTree = "<group>"; };
+		7BAB5401194ACBA5006E18FF /* OrganBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganBase.m; path = DataMana/OrganBase.m; sourceTree = "<group>"; };
+		7BAB5403194AD05F006E18FF /* LeftEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftEyeData.h; path = DataMana/LeftEyeData.h; sourceTree = "<group>"; };
+		7BAB5404194AD05F006E18FF /* LeftEyeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftEyeData.m; path = DataMana/LeftEyeData.m; sourceTree = "<group>"; };
 		7BC4210517B5FF0300C79657 /* Makeup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makeup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4210817B5FF0300C79657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BC4210A17B5FF0300C79657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -280,6 +286,10 @@
 				7BC4223017D3095700C79657 /* FaceDataManager.m */,
 				7BC7CBA7180161A80012B66A /* BezierCreatorUtils.h */,
 				7BC7CBA8180161A80012B66A /* BezierCreatorUtils.m */,
+				7BAB5400194ACBA5006E18FF /* OrganBase.h */,
+				7BAB5401194ACBA5006E18FF /* OrganBase.m */,
+				7BAB5403194AD05F006E18FF /* LeftEyeData.h */,
+				7BAB5404194AD05F006E18FF /* LeftEyeData.m */,
 			);
 			name = DataMana;
 			sourceTree = "<group>";
@@ -417,12 +427,14 @@
 			files = (
 				7BC4211517B5FF0300C79657 /* main.m in Sources */,
 				7BC4211917B5FF0300C79657 /* AppDelegate.m in Sources */,
+				7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */,
 				7BC4216A17B61FB300C79657 /* PhotoChooseViewController.m in Sources */,
 				7BC4217317BE1C3D00C79657 /* AlbumContentsTableViewCell.m in Sources */,
 				7BC4217617BE22FF00C79657 /* ThumbnailImageView.m in Sources */,
 				7BC4223117D3095700C79657 /* FaceDataManager.m in Sources */,
 				7BC4223517D3174500C79657 /* FaceTracingViewController.m in Sources */,
 				7BEB26FF17DC5A9000C649CB /* MarkupDotUIView.m in Sources */,
+				7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */,
 				7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */,
 				7BC7CB9817FFF5610012B66A /* PloygonUIView.m in Sources */,
 				7BC7CB9B180018940012B66A /* PloylineUIView.m in Sources */,
