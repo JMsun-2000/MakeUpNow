@@ -38,11 +38,7 @@
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
     UIColor *stellBlueColor = [UIColor colorWithRed:0.3f green:0.4f blue:0.6f alpha:0.5f];
     CGContextSetFillColorWithColor(currentContext, [stellBlueColor CGColor]);
- 
-    // release old one
-    if (self.curBezierPath != nil){
-        [self.curBezierPath release];
-    }
+
     self.curBezierPath = [BezierCreatorUtils getBezierPath:curPolyType Points:self.curPolyPoints];
 
         

@@ -76,15 +76,6 @@
     [self redrawPoly:self.mouthPointsViewArray polygonview:self.mouthPolygonView];
 }
 
--(void)dealloc
-{
-    for (int i = 0; i < self.mouthPointsViewArray.count; i++){
-        [[self.mouthPointsViewArray objectAtIndex:i] release];
-    }
-    [self.mouthPointsViewArray release];
-    
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {

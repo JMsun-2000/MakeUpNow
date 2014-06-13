@@ -551,6 +551,7 @@
 		7BC4213E17B5FF0300C79657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mingjie Tian (REHA8QJH54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Makeup/Makeup-Prefix.pch";
@@ -565,6 +566,7 @@
 		7BC4213F17B5FF0300C79657 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Mingjie Tian (REHA8QJH54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Makeup/Makeup-Prefix.pch";

@@ -72,10 +72,6 @@ CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
     [originalImageView addGestureRecognizer:doubleTap];
     [originalImageView addGestureRecognizer:twoFingerTap];
     
-    [singleTap release];
-    [doubleTap release];
-    [twoFingerTap release];
-    
     // calculate minimum scale to perfectly fit image width, and begin at that scale
     float minimumScale = [[FaceDataManager getInstance] getFaceScaledRatio];//This is the minimum scale, set it to whatever you want. 1.0 = default
     

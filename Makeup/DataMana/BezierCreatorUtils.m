@@ -31,7 +31,7 @@
 +(UIBezierPath*)getMouthPath:(NSArray*)pointsArray
 {
     CGPoint pervious;
-    UIBezierPath* curBezierPath = [[UIBezierPath bezierPath] retain];
+    UIBezierPath* curBezierPath = [UIBezierPath bezierPath];
     int pointCnt = [pointsArray count];
     for (int i = 0; i <= pointCnt; i++){
         // it's a polygon. So must add bezier for the last point line to begin, or it will be straight line by system automatically
@@ -72,7 +72,7 @@
 +(UIBezierPath*)getBrowPath:(NSArray*)pointsArray
 {
     CGPoint pervious;
-    UIBezierPath* curBezierPath = [[UIBezierPath bezierPath] retain];
+    UIBezierPath* curBezierPath = [UIBezierPath bezierPath];
     int pointCnt = [pointsArray count];
     for (int i = 0; i < pointCnt; i++){
         // it's a polygon. So must add bezier for the last point line to begin, or it will be straight line by system automatically
@@ -105,7 +105,7 @@
 +(UIBezierPath*)getEyePath:(NSArray*)pointsArray
 {
     CGPoint pervious;
-    UIBezierPath* curBezierPath = [[UIBezierPath bezierPath] retain];
+    UIBezierPath* curBezierPath = [UIBezierPath bezierPath];
     int pointCnt = [pointsArray count];
     for (int i = 0; i <= pointCnt; i++){
         // it's a polygon. So must add bezier for the last point line to begin, or it will be straight line by system automatically

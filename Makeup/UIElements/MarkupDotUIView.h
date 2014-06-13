@@ -13,9 +13,9 @@
 @end
 
 @interface MarkupDotUIView : UIView{
-    id <FeaturePointMoveDelegate> movedDelegate;
+
 }
 
-@property (nonatomic, assign) id<FeaturePointMoveDelegate> movedDelegate;
+@property (nonatomic, weak) id<FeaturePointMoveDelegate> movedDelegate;
 
 @end

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "LeftEyeData.h"
 
 #define FACE_TRACING_POINT_NUM 6
 
 @interface FaceDataManager : NSObject{
     ALAsset *asset;
-    CIDetector *faceDetector;
 }
 
 -(void)doFaceDetector;
@@ -39,13 +39,16 @@
 -(NSMutableArray*)getOriginalLeftEyePoints;
 
 @property (nonatomic, retain) ALAsset *asset;
-@property (nonatomic, retain) CIDetector *faceDetector;
+
 @property (nonatomic, strong) NSMutableArray* savedFacePoints;
-@property (nonatomic, strong) NSMutableArray* savedLeftEyePoints;
+@property (nonatomic, strong) LeftEyeData* leftEye;
 @property (nonatomic, strong) NSMutableArray* savedRightEyePoints;
 @property (nonatomic, strong) NSMutableArray* savedLeftBrowPoints;
 @property (nonatomic, strong) NSMutableArray* savedRightBrowPoints;
 @property (nonatomic, strong) NSMutableArray* savedMouthPoints;
 // face original data
+
+// new
+-(void) saveLeftEyePoint:(NSArray*)points;
 
 @end

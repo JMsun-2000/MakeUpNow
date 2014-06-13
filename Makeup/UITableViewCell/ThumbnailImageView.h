@@ -17,10 +17,9 @@
 @interface ThumbnailImageView : UIImageView {
     
     UIImageView *highlightView;
-    id <ThumbnailImageViewSelectionDelegate> delegate;
 }
 
-@property(nonatomic, assign) id<ThumbnailImageViewSelectionDelegate> delegate;
+@property(nonatomic, weak) id<ThumbnailImageViewSelectionDelegate> delegate;
 
 - (void)clearSelection;
 @end

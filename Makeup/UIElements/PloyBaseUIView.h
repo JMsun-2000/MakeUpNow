@@ -12,8 +12,8 @@
 @interface PloyBaseUIView : UIView{
     PolyType curPolyType;
 }
-@property (nonatomic, assign) NSArray* curPolyPoints;
-@property (nonatomic, assign) UIBezierPath* curBezierPath;
+@property (nonatomic, strong) NSArray* curPolyPoints;
+@property (nonatomic, strong) UIBezierPath* curBezierPath;
 
 -(void)setPolyPoints:(NSArray*)points;
 -(UIBezierPath*)getCurPath;

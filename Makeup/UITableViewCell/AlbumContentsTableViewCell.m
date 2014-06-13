@@ -21,11 +21,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
-
-
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     photo1.delegate = self;

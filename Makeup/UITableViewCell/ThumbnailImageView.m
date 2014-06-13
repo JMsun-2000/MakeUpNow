@@ -16,12 +16,6 @@
 
 @synthesize delegate;
 
-- (void)dealloc {
-    [highlightView release];
-    
-    [super dealloc];
-}
-
 
 #pragma mark -
 #pragma mark Touch handling

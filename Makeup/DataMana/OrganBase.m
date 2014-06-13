@@ -11,12 +11,6 @@
 @implementation OrganBase
 
 @synthesize outlinePoints;
+@synthesize maskLayerbounds;
 
--(CGRect)getMaskLayerbounds{
-    return maskLayerbounds;
-}
-
--(void)setMaskLayerbounds:(CGRect)bounds{
-    maskLayerbounds = bounds;
-}
 @end

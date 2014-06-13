@@ -33,10 +33,6 @@ CGFloat LINE_BEZIER_FACTOR_Y = 0.3f;
     UIColor *stellBlueColor = [UIColor colorWithRed:1.0f green:0.4f blue:0.6f alpha:1.0f];
     CGContextSetStrokeColorWithColor(currentContext, [stellBlueColor CGColor]);
     
-    // release old one
-    if (self.curBezierPath != nil){
-        [self.curBezierPath release];
-    }
     self.curBezierPath = [BezierCreatorUtils getBezierPath:curPolyType Points:self.curPolyPoints];
     
     [self.curBezierPath stroke];

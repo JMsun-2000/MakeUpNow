@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface OrganBase : NSObject{
-    CGRect maskLayerbounds;
 }
 
-@property (strong)NSMutableArray* outlinePoints;
+@property (strong) NSMutableArray* outlinePoints;
+@property (assign) CGPoint position;
+@property (assign) CGRect maskLayerbounds;
 
--(CGRect)getMaskLayerbounds;
--(void)setMaskLayerbounds:(CGRect)bounds;
+
 -(UIBezierPath*)getoutlineBezierPath;
 
 @end

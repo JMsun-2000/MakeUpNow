@@ -25,16 +25,6 @@
     return self;
 }
 
--(void)dealloc
-{
-    for (int i = 0; i < self.pointsViewArray.count; i++){
-        [[self.pointsViewArray objectAtIndex:i] release];
-    }
-    [self.pointsViewArray release];
-    
-    [super dealloc];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

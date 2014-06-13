@@ -32,22 +32,6 @@
 
 }
 
--(void)dealloc
-{
-    for (int i = 0; i < self.leftEyePointsViewArray.count; i++)
-        [[self.leftEyePointsViewArray objectAtIndex:i] release];
-    [_leftEyePointsViewArray release];
-    for (int i=0; i< self.rightEyePointsViewArray.count; i++)
-        [[self.rightEyePointsViewArray objectAtIndex:i] release];
-    [_rightEyePointsViewArray dealloc];
-    for (int i=0; i< self.leftBrowPointsViewArray.count; i++)
-        [[self.leftBrowPointsViewArray objectAtIndex:i] release];
-    [_leftBrowPointsViewArray dealloc];
-    for (int i=0; i< self.rightBrowPointsViewArray.count; i++)
-        [[self.rightBrowPointsViewArray objectAtIndex:i] release];
-    [_rightBrowPointsViewArray dealloc];
-    [super dealloc];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -175,7 +159,7 @@
         CGPoint point = [[self.leftEyePointsViewArray objectAtIndex:i] center];
         [points addObject:[NSValue valueWithCGPoint:point]];
     }    
-    [[FaceDataManager getInstance] setSavedLeftEyePoints:points];
+    [[FaceDataManager getInstance] saveLeftEyePoint:points];
     
     // right eye
     points = [[NSMutableArray alloc] init];

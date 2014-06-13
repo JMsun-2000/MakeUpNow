@@ -24,11 +24,11 @@
     IBOutlet ThumbnailImageView *photo4;
     
     NSUInteger rowNumber;
-    id <AlbumContentsTableViewCellSelectionDelegate> selectionDelegate;
 }
 
+@property (nonatomic, weak) id <AlbumContentsTableViewCellSelectionDelegate> selectionDelegate;
+
 @property (nonatomic, assign) NSUInteger rowNumber;
-@property (nonatomic, assign) id<AlbumContentsTableViewCellSelectionDelegate> selectionDelegate;
 
 - (UIImageView *)photo1;
 - (UIImageView *)photo2;

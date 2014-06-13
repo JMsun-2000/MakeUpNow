@@ -26,27 +26,9 @@
 }
 
 
--(void)dealloc
-{
-    if (_curPolyPoints != nil){
-        // release the old one
-        [_curPolyPoints release];
-    }
-    
-    if (_curBezierPath  != nil){
-        [self.curBezierPath release];
-    }
-    [super dealloc];
-}
-
 -(void)setPolyPoints:(NSArray*)points
 {
-    if (_curPolyPoints != nil){
-        // release the old one
-        [_curPolyPoints release];
-    }
-    
-    _curPolyPoints = [points retain];
+    _curPolyPoints = points;
 }
 
 - (void)setPolyType:(PolyType)type

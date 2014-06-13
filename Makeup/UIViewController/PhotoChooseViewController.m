@@ -26,8 +26,6 @@
     // attach click event
     UITapGestureRecognizer *tapListener = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleButtonTap:)];
     [openGallaryButton addGestureRecognizer:tapListener];
-    // release resource
-    [tapListener release];
     
     // Load photo group from asset Library
     if (!assetsLibrary) {
@@ -145,7 +143,6 @@
     if (cell == nil) {
         UIViewController *tempController = [[UIViewController alloc] initWithNibName:CellIdentifier bundle:nil];
         cell = (AlbumContentsTableViewCell*)tempController.view;
-        [tempController release];
     }
     
     cell.rowNumber = indexPath.row;
@@ -203,13 +200,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc {
-    [assetsLibrary release];
-    [groups release];
-    [assets release];
-    [super dealloc];
 }
 
 @end
