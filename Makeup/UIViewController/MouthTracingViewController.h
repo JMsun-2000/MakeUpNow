@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TracingBaseViewController.h"
+#import "MarkupDotUIView.h"
 
-@interface MouthTracingViewController : UIViewController
+@interface MouthTracingViewController : TracingBaseViewController<FeaturePointMoveDelegate>{}
 
 @end

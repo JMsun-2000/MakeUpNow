@@ -13,16 +13,37 @@
 		7BC4211317B5FF0300C79657 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4211117B5FF0300C79657 /* InfoPlist.strings */; };
 		7BC4211517B5FF0300C79657 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4211417B5FF0300C79657 /* main.m */; };
 		7BC4211917B5FF0300C79657 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4211817B5FF0300C79657 /* AppDelegate.m */; };
-		7BC4211B17B5FF0300C79657 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4211A17B5FF0300C79657 /* Default.png */; };
-		7BC4211D17B5FF0300C79657 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4211C17B5FF0300C79657 /* Default@2x.png */; };
-		7BC4211F17B5FF0300C79657 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4211E17B5FF0300C79657 /* Default-568h@2x.png */; };
 		7BC4212217B5FF0300C79657 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4212017B5FF0300C79657 /* MainStoryboard.storyboard */; };
-		7BC4212517B5FF0300C79657 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4212417B5FF0300C79657 /* ViewController.m */; };
 		7BC4212D17B5FF0300C79657 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4212C17B5FF0300C79657 /* SenTestingKit.framework */; };
 		7BC4212E17B5FF0300C79657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210817B5FF0300C79657 /* UIKit.framework */; };
 		7BC4212F17B5FF0300C79657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210A17B5FF0300C79657 /* Foundation.framework */; };
 		7BC4213717B5FF0300C79657 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4213517B5FF0300C79657 /* InfoPlist.strings */; };
 		7BC4213A17B5FF0300C79657 /* MakeupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4213917B5FF0300C79657 /* MakeupTests.m */; };
+		7BC4214617B6062B00C79657 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214317B6062B00C79657 /* Default-568h@2x.png */; };
+		7BC4214717B6062B00C79657 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214417B6062B00C79657 /* Default.png */; };
+		7BC4214817B6062B00C79657 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214517B6062B00C79657 /* Default@2x.png */; };
+		7BC4214C17B6099500C79657 /* gallery_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214B17B6099500C79657 /* gallery_button.png */; };
+		7BC4214F17B60D0900C79657 /* camera_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214D17B60D0900C79657 /* camera_button.png */; };
+		7BC4215017B60D0900C79657 /* sample_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4214E17B60D0900C79657 /* sample_button.png */; };
+		7BC4216A17B61FB300C79657 /* PhotoChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4216917B61FB300C79657 /* PhotoChooseViewController.m */; };
+		7BC4216F17BDC7E400C79657 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4216E17BDC7E400C79657 /* AssetsLibrary.framework */; };
+		7BC4217317BE1C3D00C79657 /* AlbumContentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4217217BE1C3D00C79657 /* AlbumContentsTableViewCell.m */; };
+		7BC4217617BE22FF00C79657 /* ThumbnailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4217517BE22FF00C79657 /* ThumbnailImageView.m */; };
+		7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BC4222717BF424C00C79657 /* AlbumContentsTableViewCell.xib */; };
+		7BC4223117D3095700C79657 /* FaceDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4223017D3095700C79657 /* FaceDataManager.m */; };
+		7BC4223517D3174500C79657 /* FaceTracingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4223417D3174500C79657 /* FaceTracingViewController.m */; };
+		7BC7CB9817FFF5610012B66A /* PloygonUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CB9717FFF5610012B66A /* PloygonUIView.m */; };
+		7BC7CB9B180018940012B66A /* PloylineUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CB9A180018940012B66A /* PloylineUIView.m */; };
+		7BC7CB9E18002C260012B66A /* PloyBaseUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CB9D18002C260012B66A /* PloyBaseUIView.m */; };
+		7BC7CBA2180140170012B66A /* MouthTracingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CBA0180140170012B66A /* MouthTracingViewController.m */; };
+		7BC7CBA6180142A00012B66A /* TracingBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CBA5180142A00012B66A /* TracingBaseViewController.m */; };
+		7BC7CBA9180161A80012B66A /* BezierCreatorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CBA8180161A80012B66A /* BezierCreatorUtils.m */; };
+		7BC7CBAC1801AB560012B66A /* MakeupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7CBAB1801AB560012B66A /* MakeupViewController.m */; };
+		7BC7CBAE1802F3A30012B66A /* eyeshadow-test-samples-L.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */; };
+		7BEB26F817D5FB3600C649CB /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEB26F717D5FB3600C649CB /* CoreImage.framework */; };
+		7BEB26FC17DC5A6500C649CB /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BEB26FB17DC5A6500C649CB /* point.png */; };
+		7BEB26FF17DC5A9000C649CB /* MarkupDotUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB26FE17DC5A9000C649CB /* MarkupDotUIView.m */; };
+		7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB270117DC868B00C649CB /* EyesTracingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,18 +67,52 @@
 		7BC4211617B5FF0300C79657 /* Makeup-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Makeup-Prefix.pch"; sourceTree = "<group>"; };
 		7BC4211717B5FF0300C79657 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7BC4211817B5FF0300C79657 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7BC4211A17B5FF0300C79657 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		7BC4211C17B5FF0300C79657 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		7BC4211E17B5FF0300C79657 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7BC4212117B5FF0300C79657 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		7BC4212317B5FF0300C79657 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7BC4212417B5FF0300C79657 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7BC4212B17B5FF0300C79657 /* MakeupTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MakeupTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4212C17B5FF0300C79657 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7BC4213417B5FF0300C79657 /* MakeupTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MakeupTests-Info.plist"; sourceTree = "<group>"; };
 		7BC4213617B5FF0300C79657 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7BC4213817B5FF0300C79657 /* MakeupTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeupTests.h; sourceTree = "<group>"; };
 		7BC4213917B5FF0300C79657 /* MakeupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeupTests.m; sourceTree = "<group>"; };
+		7BC4214317B6062B00C79657 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "resource/image/Default-568h@2x.png"; sourceTree = "<group>"; };
+		7BC4214417B6062B00C79657 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = resource/image/Default.png; sourceTree = "<group>"; };
+		7BC4214517B6062B00C79657 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "resource/image/Default@2x.png"; sourceTree = "<group>"; };
+		7BC4214B17B6099500C79657 /* gallery_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery_button.png; path = Makeup/resource/image/gallery_button.png; sourceTree = "<group>"; };
+		7BC4214D17B60D0900C79657 /* camera_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_button.png; path = Makeup/resource/image/camera_button.png; sourceTree = "<group>"; };
+		7BC4214E17B60D0900C79657 /* sample_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sample_button.png; path = Makeup/resource/image/sample_button.png; sourceTree = "<group>"; };
+		7BC4216817B61FB300C79657 /* PhotoChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoChooseViewController.h; path = UIViewController/PhotoChooseViewController.h; sourceTree = "<group>"; };
+		7BC4216917B61FB300C79657 /* PhotoChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoChooseViewController.m; path = UIViewController/PhotoChooseViewController.m; sourceTree = "<group>"; };
+		7BC4216E17BDC7E400C79657 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7BC4217117BE1C3D00C79657 /* AlbumContentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlbumContentsTableViewCell.h; path = UITableViewCell/AlbumContentsTableViewCell.h; sourceTree = "<group>"; };
+		7BC4217217BE1C3D00C79657 /* AlbumContentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlbumContentsTableViewCell.m; path = UITableViewCell/AlbumContentsTableViewCell.m; sourceTree = "<group>"; };
+		7BC4217417BE22FE00C79657 /* ThumbnailImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThumbnailImageView.h; path = UITableViewCell/ThumbnailImageView.h; sourceTree = "<group>"; };
+		7BC4217517BE22FF00C79657 /* ThumbnailImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThumbnailImageView.m; path = UITableViewCell/ThumbnailImageView.m; sourceTree = "<group>"; };
+		7BC4222717BF424C00C79657 /* AlbumContentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumContentsTableViewCell.xib; sourceTree = "<group>"; };
+		7BC4222F17D3095700C79657 /* FaceDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceDataManager.h; path = DataMana/FaceDataManager.h; sourceTree = "<group>"; };
+		7BC4223017D3095700C79657 /* FaceDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceDataManager.m; path = DataMana/FaceDataManager.m; sourceTree = "<group>"; };
+		7BC4223317D3174500C79657 /* FaceTracingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FaceTracingViewController.h; path = UIViewController/FaceTracingViewController.h; sourceTree = "<group>"; };
+		7BC4223417D3174500C79657 /* FaceTracingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FaceTracingViewController.m; path = UIViewController/FaceTracingViewController.m; sourceTree = "<group>"; };
+		7BC7CB9617FFF5610012B66A /* PloygonUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PloygonUIView.h; path = UIElements/PloygonUIView.h; sourceTree = "<group>"; };
+		7BC7CB9717FFF5610012B66A /* PloygonUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PloygonUIView.m; path = UIElements/PloygonUIView.m; sourceTree = "<group>"; };
+		7BC7CB99180018940012B66A /* PloylineUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PloylineUIView.h; path = UIElements/PloylineUIView.h; sourceTree = "<group>"; };
+		7BC7CB9A180018940012B66A /* PloylineUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PloylineUIView.m; path = UIElements/PloylineUIView.m; sourceTree = "<group>"; };
+		7BC7CB9C18002C260012B66A /* PloyBaseUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PloyBaseUIView.h; path = UIElements/PloyBaseUIView.h; sourceTree = "<group>"; };
+		7BC7CB9D18002C260012B66A /* PloyBaseUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PloyBaseUIView.m; path = UIElements/PloyBaseUIView.m; sourceTree = "<group>"; };
+		7BC7CB9F180140170012B66A /* MouthTracingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MouthTracingViewController.h; path = UIViewController/MouthTracingViewController.h; sourceTree = "<group>"; };
+		7BC7CBA0180140170012B66A /* MouthTracingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MouthTracingViewController.m; path = UIViewController/MouthTracingViewController.m; sourceTree = "<group>"; };
+		7BC7CBA4180142A00012B66A /* TracingBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TracingBaseViewController.h; path = UIViewController/TracingBaseViewController.h; sourceTree = "<group>"; };
+		7BC7CBA5180142A00012B66A /* TracingBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TracingBaseViewController.m; path = UIViewController/TracingBaseViewController.m; sourceTree = "<group>"; };
+		7BC7CBA7180161A80012B66A /* BezierCreatorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BezierCreatorUtils.h; path = DataMana/BezierCreatorUtils.h; sourceTree = "<group>"; };
+		7BC7CBA8180161A80012B66A /* BezierCreatorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BezierCreatorUtils.m; path = DataMana/BezierCreatorUtils.m; sourceTree = "<group>"; };
+		7BC7CBAA1801AB560012B66A /* MakeupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MakeupViewController.h; path = UIViewController/MakeupViewController.h; sourceTree = "<group>"; };
+		7BC7CBAB1801AB560012B66A /* MakeupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MakeupViewController.m; path = UIViewController/MakeupViewController.m; sourceTree = "<group>"; };
+		7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "eyeshadow-test-samples-L.jpg"; path = "Makeup/resource/image/eyeshadow-test-samples-L.jpg"; sourceTree = "<group>"; };
+		7BEB26F717D5FB3600C649CB /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		7BEB26FB17DC5A6500C649CB /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = point.png; path = Makeup/resource/image/point.png; sourceTree = "<group>"; };
+		7BEB26FD17DC5A9000C649CB /* MarkupDotUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarkupDotUIView.h; path = UIElements/MarkupDotUIView.h; sourceTree = "<group>"; };
+		7BEB26FE17DC5A9000C649CB /* MarkupDotUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarkupDotUIView.m; path = UIElements/MarkupDotUIView.m; sourceTree = "<group>"; };
+		7BEB270017DC868B00C649CB /* EyesTracingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EyesTracingViewController.h; path = UIViewController/EyesTracingViewController.h; sourceTree = "<group>"; };
+		7BEB270117DC868B00C649CB /* EyesTracingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EyesTracingViewController.m; path = UIViewController/EyesTracingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BEB26F817D5FB3600C649CB /* CoreImage.framework in Frameworks */,
+				7BC4216F17BDC7E400C79657 /* AssetsLibrary.framework in Frameworks */,
 				7BC4210917B5FF0300C79657 /* UIKit.framework in Frameworks */,
 				7BC4210B17B5FF0300C79657 /* Foundation.framework in Frameworks */,
 				7BC4210D17B5FF0300C79657 /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +144,9 @@
 		7BC420FC17B5FF0200C79657 = {
 			isa = PBXGroup;
 			children = (
+				7BEB26F717D5FB3600C649CB /* CoreImage.framework */,
+				7BC4216E17BDC7E400C79657 /* AssetsLibrary.framework */,
+				7BC4214917B6089700C79657 /* Resource */,
 				7BC4210E17B5FF0300C79657 /* Makeup */,
 				7BC4213217B5FF0300C79657 /* MakeupTests */,
 				7BC4210717B5FF0300C79657 /* Frameworks */,
@@ -117,11 +177,13 @@
 		7BC4210E17B5FF0300C79657 /* Makeup */ = {
 			isa = PBXGroup;
 			children = (
+				7BEB26FA17DC593C00C649CB /* UIElements */,
+				7BC4222E17D3094400C79657 /* DataMana */,
+				7BC4217017BE1B8200C79657 /* UITableViewCell */,
+				7BC4216717B61FA400C79657 /* UIViewController */,
 				7BC4211717B5FF0300C79657 /* AppDelegate.h */,
 				7BC4211817B5FF0300C79657 /* AppDelegate.m */,
 				7BC4212017B5FF0300C79657 /* MainStoryboard.storyboard */,
-				7BC4212317B5FF0300C79657 /* ViewController.h */,
-				7BC4212417B5FF0300C79657 /* ViewController.m */,
 				7BC4210F17B5FF0300C79657 /* Supporting Files */,
 			);
 			path = Makeup;
@@ -130,13 +192,13 @@
 		7BC4210F17B5FF0300C79657 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7BC4214317B6062B00C79657 /* Default-568h@2x.png */,
+				7BC4214417B6062B00C79657 /* Default.png */,
+				7BC4214517B6062B00C79657 /* Default@2x.png */,
 				7BC4211017B5FF0300C79657 /* Makeup-Info.plist */,
 				7BC4211117B5FF0300C79657 /* InfoPlist.strings */,
 				7BC4211417B5FF0300C79657 /* main.m */,
 				7BC4211617B5FF0300C79657 /* Makeup-Prefix.pch */,
-				7BC4211A17B5FF0300C79657 /* Default.png */,
-				7BC4211C17B5FF0300C79657 /* Default@2x.png */,
-				7BC4211E17B5FF0300C79657 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -158,6 +220,83 @@
 				7BC4213517B5FF0300C79657 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7BC4214917B6089700C79657 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				7BC4214A17B608A300C79657 /* image */,
+				7BC4222717BF424C00C79657 /* AlbumContentsTableViewCell.xib */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		7BC4214A17B608A300C79657 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */,
+				7BEB26FB17DC5A6500C649CB /* point.png */,
+				7BC4214D17B60D0900C79657 /* camera_button.png */,
+				7BC4214E17B60D0900C79657 /* sample_button.png */,
+				7BC4214B17B6099500C79657 /* gallery_button.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		7BC4216717B61FA400C79657 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7BC4216817B61FB300C79657 /* PhotoChooseViewController.h */,
+				7BC4216917B61FB300C79657 /* PhotoChooseViewController.m */,
+				7BC4223317D3174500C79657 /* FaceTracingViewController.h */,
+				7BC4223417D3174500C79657 /* FaceTracingViewController.m */,
+				7BEB270017DC868B00C649CB /* EyesTracingViewController.h */,
+				7BEB270117DC868B00C649CB /* EyesTracingViewController.m */,
+				7BC7CB9F180140170012B66A /* MouthTracingViewController.h */,
+				7BC7CBA0180140170012B66A /* MouthTracingViewController.m */,
+				7BC7CBA4180142A00012B66A /* TracingBaseViewController.h */,
+				7BC7CBA5180142A00012B66A /* TracingBaseViewController.m */,
+				7BC7CBAA1801AB560012B66A /* MakeupViewController.h */,
+				7BC7CBAB1801AB560012B66A /* MakeupViewController.m */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		7BC4217017BE1B8200C79657 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7BC4217117BE1C3D00C79657 /* AlbumContentsTableViewCell.h */,
+				7BC4217217BE1C3D00C79657 /* AlbumContentsTableViewCell.m */,
+				7BC4217417BE22FE00C79657 /* ThumbnailImageView.h */,
+				7BC4217517BE22FF00C79657 /* ThumbnailImageView.m */,
+			);
+			name = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		7BC4222E17D3094400C79657 /* DataMana */ = {
+			isa = PBXGroup;
+			children = (
+				7BC4222F17D3095700C79657 /* FaceDataManager.h */,
+				7BC4223017D3095700C79657 /* FaceDataManager.m */,
+				7BC7CBA7180161A80012B66A /* BezierCreatorUtils.h */,
+				7BC7CBA8180161A80012B66A /* BezierCreatorUtils.m */,
+			);
+			name = DataMana;
+			sourceTree = "<group>";
+		};
+		7BEB26FA17DC593C00C649CB /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				7BC7CB9617FFF5610012B66A /* PloygonUIView.h */,
+				7BC7CB9717FFF5610012B66A /* PloygonUIView.m */,
+				7BEB26FD17DC5A9000C649CB /* MarkupDotUIView.h */,
+				7BEB26FE17DC5A9000C649CB /* MarkupDotUIView.m */,
+				7BC7CB99180018940012B66A /* PloylineUIView.h */,
+				7BC7CB9A180018940012B66A /* PloylineUIView.m */,
+				7BC7CB9C18002C260012B66A /* PloyBaseUIView.h */,
+				7BC7CB9D18002C260012B66A /* PloyBaseUIView.m */,
+			);
+			name = UIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,10 +371,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BC4211317B5FF0300C79657 /* InfoPlist.strings in Resources */,
-				7BC4211B17B5FF0300C79657 /* Default.png in Resources */,
-				7BC4211D17B5FF0300C79657 /* Default@2x.png in Resources */,
-				7BC4211F17B5FF0300C79657 /* Default-568h@2x.png in Resources */,
 				7BC4212217B5FF0300C79657 /* MainStoryboard.storyboard in Resources */,
+				7BC4214617B6062B00C79657 /* Default-568h@2x.png in Resources */,
+				7BC4214717B6062B00C79657 /* Default.png in Resources */,
+				7BC4214817B6062B00C79657 /* Default@2x.png in Resources */,
+				7BC4214C17B6099500C79657 /* gallery_button.png in Resources */,
+				7BC4214F17B60D0900C79657 /* camera_button.png in Resources */,
+				7BC4215017B60D0900C79657 /* sample_button.png in Resources */,
+				7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */,
+				7BEB26FC17DC5A6500C649CB /* point.png in Resources */,
+				7BC7CBAE1802F3A30012B66A /* eyeshadow-test-samples-L.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +417,20 @@
 			files = (
 				7BC4211517B5FF0300C79657 /* main.m in Sources */,
 				7BC4211917B5FF0300C79657 /* AppDelegate.m in Sources */,
-				7BC4212517B5FF0300C79657 /* ViewController.m in Sources */,
+				7BC4216A17B61FB300C79657 /* PhotoChooseViewController.m in Sources */,
+				7BC4217317BE1C3D00C79657 /* AlbumContentsTableViewCell.m in Sources */,
+				7BC4217617BE22FF00C79657 /* ThumbnailImageView.m in Sources */,
+				7BC4223117D3095700C79657 /* FaceDataManager.m in Sources */,
+				7BC4223517D3174500C79657 /* FaceTracingViewController.m in Sources */,
+				7BEB26FF17DC5A9000C649CB /* MarkupDotUIView.m in Sources */,
+				7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */,
+				7BC7CB9817FFF5610012B66A /* PloygonUIView.m in Sources */,
+				7BC7CB9B180018940012B66A /* PloylineUIView.m in Sources */,
+				7BC7CB9E18002C260012B66A /* PloyBaseUIView.m in Sources */,
+				7BC7CBA2180140170012B66A /* MouthTracingViewController.m in Sources */,
+				7BC7CBA6180142A00012B66A /* TracingBaseViewController.m in Sources */,
+				7BC7CBA9180161A80012B66A /* BezierCreatorUtils.m in Sources */,
+				7BC7CBAC1801AB560012B66A /* MakeupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,10 +539,13 @@
 		7BC4213E17B5FF0300C79657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mingjie Tian (REHA8QJH54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Makeup/Makeup-Prefix.pch";
 				INFOPLIST_FILE = "Makeup/Makeup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "36216C67-5BE7-4A9F-BDE7-B715A1E494B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,10 +553,13 @@
 		7BC4213F17B5FF0300C79657 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mingjie Tian (REHA8QJH54)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Makeup/Makeup-Prefix.pch";
 				INFOPLIST_FILE = "Makeup/Makeup-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "36216C67-5BE7-4A9F-BDE7-B715A1E494B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -453,6 +617,7 @@
 				7BC4213F17B5FF0300C79657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BC4214017B5FF0300C79657 /* Build configuration list for PBXNativeTarget "MakeupTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +626,7 @@
 				7BC4214217B5FF0300C79657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

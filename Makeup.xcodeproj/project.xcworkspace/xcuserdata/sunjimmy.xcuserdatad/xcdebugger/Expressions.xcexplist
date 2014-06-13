@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[FaceTracingViewController viewDidLoad]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[FaceDataManager getInstance] fullScreenPhotoRef]">
+            </PersistentString>
+            <PersistentString
+               value = "faceImageView.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PhotoChooseViewController chooseThisPhoto:]:PhotoChooseViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[assetRepresentation fullResolutionImage]">
+            </PersistentString>
+            <PersistentString
+               value = "[asset defaultRepresentation]">
+            </PersistentString>
+            <PersistentString
+               value = "[asset thumbnail]">
+            </PersistentString>
+            <PersistentString
+               value = "[assetRepresentation fullScreenImage]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pointsValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager getEyesPhoto:]:FaceDataManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "eyeDistance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager getFacePhoto:]:FaceDataManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.originalImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "imgReturn.size">
+            </PersistentString>
+            <PersistentString
+               value = "img.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceTracingViewController viewWillAppear:]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "faceImageView.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MakeupViewController getLeftEyeMask]:MakeupViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pointsPos[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MakeupViewController viewWillAppear:]:MakeupViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PhotoChooseViewController tableView:cellForRowAtIndexPath:]:PhotoChooseViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "tmpCell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceTracingViewController viewDidLayoutSubviews]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "faceImageView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

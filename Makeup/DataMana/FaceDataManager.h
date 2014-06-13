@@ -7,13 +7,45 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ImageFaceDetectorUtils.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
-@interface FaceDataManager : NSObject
-@property (nonatomic, strong) ImageFaceDetectorUtils *faceDetector;
+#define FACE_TRACING_POINT_NUM 6
+
+@interface FaceDataManager : NSObject{
+    ALAsset *asset;
+    CIDetector *faceDetector;
+}
+
+-(void)doFaceDetector;
 
 +(FaceDataManager*)getInstance;
--(void)initWithUIImage:(UIImage*)image limitSize:(CGRect)boundBox;
--(UIImage*)getLeftEye:(CGRect)boundBox ScaleType:(int)scaleType;
--(NSArray*)getLeftEyePoints;
+-(UIImage*)getOriginalImage;
+
+-(UIImage*)getFacePhoto:(CGSize)windowSize;
+-(NSArray*)getFaceInitialPoints;
+
+-(UIImage*)getEyesPhoto:(CGSize)windowSize;
+-(NSArray*)getLeftEyeInitialPoints;
+-(NSArray*)getRightEyeInitialPoints;
+-(NSArray*)getLeftBrowInitialPoints;
+-(NSArray*)getRightBrowInitialPoints;
+
+-(UIImage*)getMouthPhoto:(CGSize)windowSize;
+-(NSArray*)getMouthInitialPoints;
+
+// scale parameter getter
+-(CGFloat)getFaceScaledRatio;
+-(CGPoint)getFaceScaledOffset;
+-(NSMutableArray*)getOriginalLeftEyePoints;
+
+@property (nonatomic, retain) ALAsset *asset;
+@property (nonatomic, retain) CIDetector *faceDetector;
+@property (nonatomic, strong) NSMutableArray* savedFacePoints;
+@property (nonatomic, strong) NSMutableArray* savedLeftEyePoints;
+@property (nonatomic, strong) NSMutableArray* savedRightEyePoints;
+@property (nonatomic, strong) NSMutableArray* savedLeftBrowPoints;
+@property (nonatomic, strong) NSMutableArray* savedRightBrowPoints;
+@property (nonatomic, strong) NSMutableArray* savedMouthPoints;
+// face original data
+
 @end

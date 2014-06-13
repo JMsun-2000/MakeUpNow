@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MarkupDotUIView.h"
+#import "TracingBaseViewController.h"
 
-@interface FaceTracingViewController : UIViewController
+@interface FaceTracingViewController : TracingBaseViewController{
+    UIImageView *faceImageView;
+}
 
 @end

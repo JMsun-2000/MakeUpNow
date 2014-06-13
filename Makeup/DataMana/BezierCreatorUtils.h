@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BezierCreatorUtils : NSObject
+typedef enum {
+    EYE_POLYGON,
+    BROW_POLYLINE,
+    MOUTH_POLYGON,
+    ERROR
+} PolyType;
 
+@interface BezierCreatorUtils : NSObject
++(UIBezierPath*)getBezierPath:(PolyType)type Points:(NSArray*)pointsArray;
 @end

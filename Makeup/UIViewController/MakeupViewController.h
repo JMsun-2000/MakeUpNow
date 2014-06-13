@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MakeupViewController : UIViewController
+@interface MakeupViewController : UIViewController<UIScrollViewDelegate>{
+    IBOutlet UIButton *doEyeMaskButton;
+}
+@property (nonatomic, retain) IBOutlet UIScrollView *imageScrollView;
 
 @end

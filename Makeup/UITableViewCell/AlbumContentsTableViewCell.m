@@ -29,6 +29,7 @@
 - (void)awakeFromNib {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     photo1.delegate = self;
+ //   photo1.userInteractionEnabled = YES;
     photo2.delegate = self;
     photo3.delegate = self;
     photo4.delegate = self;

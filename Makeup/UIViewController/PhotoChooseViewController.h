@@ -11,15 +11,15 @@
 #import "AlbumContentsTableViewCell.h"
 
 @interface PhotoChooseViewController : UIViewController
-           <UITableViewDelegate, UITableViewDataSource>
+           <UITableViewDelegate, UITableViewDataSource, AlbumContentsTableViewCellSelectionDelegate>
 {
     IBOutlet UIView *albumPopupUIView;
     IBOutlet UIImageView *openGallaryButton;
     IBOutlet UITableView *photoTableView;
-    IBOutlet AlbumContentsTableViewCell *tmpCell;
+    IBOutlet UIButton *selectButton;
     ALAssetsLibrary *assetsLibrary;
     NSMutableArray *groups;
     NSMutableArray *assets;
+    int selectedIndex;
 }
-
 @end

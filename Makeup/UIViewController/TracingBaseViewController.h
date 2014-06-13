@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PloyBaseUIView.h"
 
-@interface TracingBaseViewController : UIViewController
-
+@interface TracingBaseViewController : UIViewController{
+    IBOutlet UIButton *popBackButton;
+    IBOutlet UIButton *doNextButton;
+}
+-(void)redrawPoly:(NSMutableArray*)pointArray polygonview:(PloyBaseUIView*)polygon;
 @end

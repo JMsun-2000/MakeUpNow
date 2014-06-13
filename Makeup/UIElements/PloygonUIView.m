@@ -1,20 +1,24 @@
 //
-//  PloylineUIView.m
-//  Makeup
+//  ploygonUIView.m
+//  MarkupProject
 //
-//  Created by Sun Jimmy on 10/5/13.
+//  Created by Sun Jimmy on 7/13/13.
 //  Copyright (c) 2013 Sun Jimmy. All rights reserved.
 //
 
-#import "PloylineUIView.h"
+#import "PloygonUIView.h"
 
-@interface PloylineUIView()
+
+@interface PloygonUIView(){
+    
+}
+
 @end
 
-CGFloat LINE_BEZIER_FACTOR_X = 0.25f;
-CGFloat LINE_BEZIER_FACTOR_Y = 0.3f;
 
-@implementation PloylineUIView
+@implementation PloygonUIView{
+    
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,21 +29,25 @@ CGFloat LINE_BEZIER_FACTOR_Y = 0.3f;
     return self;
 }
 
+
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    UIColor *stellBlueColor = [UIColor colorWithRed:1.0f green:0.4f blue:0.6f alpha:1.0f];
-    CGContextSetStrokeColorWithColor(currentContext, [stellBlueColor CGColor]);
-    
+    UIColor *stellBlueColor = [UIColor colorWithRed:0.3f green:0.4f blue:0.6f alpha:0.5f];
+    CGContextSetFillColorWithColor(currentContext, [stellBlueColor CGColor]);
+ 
     // release old one
     if (self.curBezierPath != nil){
         [self.curBezierPath release];
     }
     self.curBezierPath = [BezierCreatorUtils getBezierPath:curPolyType Points:self.curPolyPoints];
+
+        
+    [self.curBezierPath fill];
     
-    [self.curBezierPath stroke];
 }
 
 

@@ -1,75 +1,85 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="8.00">
-	<data>
-		<int key="IBDocument.SystemTarget">1536</int>
-		<string key="IBDocument.SystemVersion">12A206j</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2519</string>
-		<string key="IBDocument.AppKitVersion">1172.1</string>
-		<string key="IBDocument.HIToolboxVersion">613.00</string>
-		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
-			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">1856</string>
-		</object>
-		<array key="IBDocument.IntegratedClassDependencies">
-			<string>IBProxyObject</string>
-		</array>
-		<array key="IBDocument.PluginDependencies">
-			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-		</array>
-		<object class="NSMutableDictionary" key="IBDocument.Metadata">
-			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
-			<integer value="1" key="NS.object.0"/>
-		</object>
-		<array class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
-			<object class="IBProxyObject" id="841351856">
-				<string key="IBProxiedObjectIdentifier">IBFilesOwner</string>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-			<object class="IBProxyObject" id="371349661">
-				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
-				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-			</object>
-		</array>
-		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<array class="NSMutableArray" key="connectionRecords"/>
-			<object class="IBMutableOrderedSet" key="objectRecords">
-				<array key="orderedObjects">
-					<object class="IBObjectRecord">
-						<int key="objectID">0</int>
-						<array key="object" id="0"/>
-						<reference key="children" ref="1000"/>
-						<nil key="parent"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">-1</int>
-						<reference key="object" ref="841351856"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">File's Owner</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">-2</int>
-						<reference key="object" ref="371349661"/>
-						<reference key="parent" ref="0"/>
-					</object>
-				</array>
-			</object>
-			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="-2.CustomClassName">UIResponder</string>
-				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			</dictionary>
-			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
-			<nil key="activeLocalization"/>
-			<dictionary class="NSMutableDictionary" key="localizations"/>
-			<nil key="sourceID"/>
-			<int key="maxID">1</int>
-		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
-		<int key="IBDocument.localizationMode">0</int>
-		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
-		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<bool key="IBDocument.UseAutolayout">YES</bool>
-		<string key="IBCocoaTouchPluginVersion">1856</string>
-	</data>
-</archive>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewController">
+            <connections>
+                <outlet property="view" destination="2" id="69"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="center" selectionStyle="blue" indentationWidth="10" rowHeight="200" id="2" customClass="AlbumContentsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="747" height="201"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2" id="bCw-tu-a1a">
+                <rect key="frame" x="0.0" y="0.0" width="747" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="146">
+                        <rect key="frame" x="0.0" y="181" width="747" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="747" id="163"/>
+                            <constraint firstAttribute="height" constant="20" id="167"/>
+                        </constraints>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3" customClass="ThumbnailImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="77"/>
+                        </constraints>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12" customClass="ThumbnailImageView">
+                        <rect key="frame" x="188" y="0.0" width="180" height="180"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="127"/>
+                        </constraints>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22" customClass="ThumbnailImageView">
+                        <rect key="frame" x="376" y="0.0" width="180" height="180"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="86"/>
+                            <constraint firstAttribute="height" constant="180" id="134"/>
+                        </constraints>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57" customClass="ThumbnailImageView">
+                        <rect key="frame" x="567" y="0.0" width="180" height="180"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="180" id="89"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="57" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" id="Ahg-yZ-EFj"/>
+                <constraint firstItem="12" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" symbolic="YES" id="Als-EX-3KS"/>
+                <constraint firstItem="57" firstAttribute="top" secondItem="2" secondAttribute="top" id="DsR-Sp-kFZ"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="2" secondAttribute="top" id="McU-bU-82J"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" id="P3i-WV-WNL"/>
+                <constraint firstItem="22" firstAttribute="bottom" secondItem="12" secondAttribute="bottom" id="S4z-Nk-jXJ"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="cjh-0a-CQO"/>
+                <constraint firstItem="12" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="jYA-q3-FSr"/>
+                <constraint firstItem="146" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="kfm-a7-UPl"/>
+                <constraint firstItem="22" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="nOr-aP-8et"/>
+                <constraint firstItem="22" firstAttribute="top" secondItem="2" secondAttribute="top" id="nzp-fs-UrY"/>
+                <constraint firstItem="146" firstAttribute="trailing" secondItem="57" secondAttribute="trailing" id="wD1-u2-h6w"/>
+                <constraint firstItem="146" firstAttribute="bottom" secondItem="2" secondAttribute="bottom" id="yK2-AG-0Ii"/>
+            </constraints>
+            <connections>
+                <outlet property="photo1" destination="3" id="65"/>
+                <outlet property="photo2" destination="12" id="66"/>
+                <outlet property="photo3" destination="22" id="67"/>
+                <outlet property="photo4" destination="57" id="68"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

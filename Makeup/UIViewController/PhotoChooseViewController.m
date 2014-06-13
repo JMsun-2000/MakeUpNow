@@ -8,7 +8,8 @@
 
 #import "PhotoChooseViewController.h"
 #include <AssetsLibrary/AssetsLibrary.h>
-
+#import "FaceDataManager.h"
+#import "FaceTracingViewController.h"
 
 @interface PhotoChooseViewController ()
 
@@ -43,10 +44,19 @@
         [assets removeAllObjects];
     }
     
+    ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
+    // get photo info from every group
+    ALAssetsGroupEnumerationResultsBlock assetsEnumerationBlock = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
+        
+        if (result) {
+            [assets addObject:result];
+        }
+    };
     ALAssetsLibraryGroupsEnumerationResultsBlock listGroupBlock = ^(ALAssetsGroup *group, BOOL *stop) {
         
         if (group) {
-            [groups addObject:group];
+            [group setAssetsFilter:onlyPhotosFilter];
+            [group enumerateAssetsUsingBlock:assetsEnumerationBlock];
         } else {
             [photoTableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
         }
@@ -68,26 +78,25 @@
     
     NSUInteger groupTypes = ALAssetsGroupAlbum | ALAssetsGroupEvent | ALAssetsGroupFaces | ALAssetsGroupSavedPhotos;
     [assetsLibrary enumerateGroupsWithTypes:groupTypes usingBlock:listGroupBlock failureBlock:failureBlock];
-    
-    
-    // get photo info from every group
-    ALAssetsGroupEnumerationResultsBlock assetsEnumerationBlock = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        
-        if (result) {
-            [assets addObject:result];
-        }
-    };
-    ALAssetsFilter *onlyPhotosFilter = [ALAssetsFilter allPhotos];
-    for (int i=0; i<groups.count; i++){
-        ALAssetsGroup *assetsGroup = [groups objectAtIndex:i];
-        [assetsGroup setAssetsFilter:onlyPhotosFilter];
-        [assetsGroup enumerateAssetsUsingBlock:assetsEnumerationBlock];
-    }
+
     
     // set tableview delgate
     photoTableView.delegate = self;
     photoTableView.dataSource = self;
+    
+    // set select button listener
+    [selectButton addTarget:self action:@selector(chooseThisPhoto:) forControlEvents:UIControlEventTouchDown];
  }
+
+
+-(void)chooseThisPhoto:(id)target
+{
+    ALAsset *asset = [assets objectAtIndex:selectedIndex];
+    [[FaceDataManager getInstance] setAsset:asset];
+
+    // Get photo and do face detector
+    [[FaceDataManager getInstance] doFaceDetector];
+}
 
 -(void)handleButtonTap:(UITapGestureRecognizer *)recognizer
 {
@@ -130,13 +139,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"AlbumContentsTableViewCell";
     
     AlbumContentsTableViewCell *cell = (AlbumContentsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"AlbumContentsTableViewCell" owner:self options:nil];
-        cell = tmpCell;
-        tmpCell = nil;
+        UIViewController *tempController = [[UIViewController alloc] initWithNibName:CellIdentifier bundle:nil];
+        cell = (AlbumContentsTableViewCell*)tempController.view;
+        [tempController release];
     }
     
     cell.rowNumber = indexPath.row;
@@ -178,6 +187,16 @@
     }
     
     return cell;
+}
+
+
+
+#pragma mark -
+#pragma mark AlbumContentsTableViewCellSelectionDelegate
+
+- (void)albumContentsTableViewCell:(AlbumContentsTableViewCell *)cell selectedPhotoAtIndex:(NSUInteger)index {
+    // save the photo index
+    selectedIndex = (cell.rowNumber * 4) + index;
 }
 
 - (void)didReceiveMemoryWarning

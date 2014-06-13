@@ -49,8 +49,8 @@
 
 - (void)createHighlightImageViewIfNecessary {
     if (!highlightView) {
-        UIImage *thumbnailHighlight = [UIImage imageNamed:@"ThumbnailHighlight"];
-        highlightView = [[UIImageView alloc] initWithImage:thumbnailHighlight];
+        highlightView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 190, 190)];
+        highlightView.backgroundColor = [UIColor blackColor];
         [highlightView setAlpha: 0.5];
     }
 }

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MarkupDotUIView.h"
+#import "TracingBaseViewController.h"
 
-@interface EyesTracingViewController : UIViewController
+@interface EyesTracingViewController : TracingBaseViewController<FeaturePointMoveDelegate>{
+    UIImageView *eyeImageView;
+}
 
 @end
