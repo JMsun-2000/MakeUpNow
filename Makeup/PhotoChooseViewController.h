@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PhotoChooseViewController : UIViewController
+@property (nonatomic, strong) IBOutlet UIImageView *openGallaryButton;
 @end

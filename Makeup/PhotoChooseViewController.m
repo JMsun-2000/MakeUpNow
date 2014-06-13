@@ -6,18 +6,21 @@
 //  Copyright (c) 2013 Sun Jimmy. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "PhotoChooseViewController.h"
 
-@interface ViewController ()
+@interface PhotoChooseViewController ()
 
 @end
 
-@implementation ViewController
+@implementation PhotoChooseViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    // attach click event
+    UITapGestureRecognizer *tap = [UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleButtonTap)
+    self.openGallaryButton;
 }
 
 - (void)didReceiveMemoryWarning
