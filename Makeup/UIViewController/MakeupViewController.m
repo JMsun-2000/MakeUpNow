@@ -11,10 +11,6 @@
 #import "BezierCreatorUtils.h"
 #define ZOOM_STEP 2.0
 
-CGFloat const DEFAULT_LEFTEYE_SHADOW_WIDTH = 249.57563983f;
-CGFloat const DEFAULT_LEFTEYE_SHADOW_HEIGHT = 100.00000f;
-CGFloat const LEFTEYE_REFERENCE_POINT_X = 412.0f;
-CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
 
 
 @interface MakeupViewController ()
@@ -52,7 +48,7 @@ CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
     originalImageView = [[UIImageView alloc] initWithImage:image];
     originalImageView.userInteractionEnabled = YES;
     // add mask view
-    leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:originalImageView.frame];
+    leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftEyeBounds]];
     [originalImageView addSubview:leftEyeMaskImageView];
     
     //Adding the imageView to the scrollView as subView
@@ -98,7 +94,7 @@ CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
 
 -(void)doMaskEye
 {
-    UIImage *maskedImage = [self getLeftEyeMask];
+    UIImage *maskedImage = [[FaceDataManager getInstance] getLeftEyeMask];
     leftEyeMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
 }
 
@@ -142,7 +138,7 @@ CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
     // Add alpha mask
     UIImage *maskOriginal = [UIImage imageNamed:@"eyeshadow-test-samples-L.jpg"];
     // Scale and rotation mask
-    CGFloat curXDist = pointsPos[2].x - pointsPos[0].x;
+/*    CGFloat curXDist = pointsPos[2].x - pointsPos[0].x;
     CGFloat curYDist = pointsPos[2].y - pointsPos[0].y;
     CGFloat curEyeDistance = sqrt((curXDist*curXDist)+(curYDist*curYDist));
     curXDist = pointsPos[3].x - pointsPos[1].x;
@@ -166,10 +162,10 @@ CGFloat const LEFTEYE_REFERENCE_POINT_Y = 208.0f;
     [maskOriginal drawInRect:CGRectMake(xOffset, yOffset, realWidth, realHeigth)];
     // move the polygon of eye
     [[BezierCreatorUtils getBezierPath:EYE_POLYGON Points:leftEyepoints] fill];
-
-    
+ 
     // recovery environment and save new Image
     CGContextRestoreGState(oldContext);
+ */
     UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

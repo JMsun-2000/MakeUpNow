@@ -31,15 +31,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
+         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceTracingViewController viewWillAppear:]:FaceTracingViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "pointsValue">
+               value = "faceImageView.frame.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
+         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MakeupViewController getLeftEyeMask]:MakeupViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pointsPos[1]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "main:main.m">
@@ -67,21 +78,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceTracingViewController viewWillAppear:]:FaceTracingViewController.m">
+         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "faceImageView.frame.size">
+               value = "pointsValue">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[MakeupViewController getLeftEyeMask]:MakeupViewController.m">
+         contextName = "-[LeftEyeData getMaskImage]:LeftEyeData.m">
          <PersistentStrings>
             <PersistentString
-               value = "pointsPos[1]">
+               value = "self.originalImage">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

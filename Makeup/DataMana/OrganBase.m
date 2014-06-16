@@ -11,6 +11,6 @@
 @implementation OrganBase
 
 @synthesize outlinePoints;
-@synthesize maskLayerbounds;
+@synthesize originalImage;
 
 @end

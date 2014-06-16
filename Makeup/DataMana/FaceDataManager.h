@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
-#import "LeftEyeData.h"
+
+@class LeftEyeData;
 
 #define FACE_TRACING_POINT_NUM 6
 
@@ -50,5 +51,7 @@
 
 // new
 -(void) saveLeftEyePoint:(NSArray*)points;
+-(UIImage*) getLeftEyeMask;
+-(CGRect) getLeftEyeBounds;
 
 @end

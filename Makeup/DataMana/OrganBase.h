@@ -12,10 +12,10 @@
 }
 
 @property (strong) NSMutableArray* outlinePoints;
+@property (strong) UIImage* originalImage;
 @property (assign) CGPoint position;
 @property (assign) CGRect maskLayerbounds;
 
-
--(UIBezierPath*)getoutlineBezierPath;
+-(UIImage*)getMaskImage;
 
 @end

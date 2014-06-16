@@ -14,7 +14,7 @@
     UIBezierPath* ret = nil;
     switch (type) {
         case EYE_POLYGON:
-            ret = [self getEyePath:pointsArray];
+            ret = [self getEyePath:pointsArray offset:CGPointMake(0,0)];
             break;
         case BROW_POLYLINE:
             ret = [self getBrowPath:pointsArray];
@@ -102,7 +102,7 @@
     return curBezierPath;
 }
 
-+(UIBezierPath*)getEyePath:(NSArray*)pointsArray
++(UIBezierPath*)getEyePath:(NSArray*)pointsArray offset:(CGPoint)offset
 {
     CGPoint pervious;
     UIBezierPath* curBezierPath = [UIBezierPath bezierPath];
@@ -110,6 +110,8 @@
     for (int i = 0; i <= pointCnt; i++){
         // it's a polygon. So must add bezier for the last point line to begin, or it will be straight line by system automatically
         CGPoint p = [[pointsArray objectAtIndex:(i%pointCnt)] CGPointValue];
+        p.x += offset.x;
+        p.y += offset.y;
         if (i == 0){
             [curBezierPath moveToPoint:CGPointMake(p.x, p.y)];
         }

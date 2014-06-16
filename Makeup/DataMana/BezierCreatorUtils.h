@@ -17,5 +17,5 @@ typedef enum {
 
 @interface BezierCreatorUtils : NSObject
 +(UIBezierPath*)getBezierPath:(PolyType)type Points:(NSArray*)pointsArray;
-+(UIBezierPath*)getEyePath:(NSArray*)pointsArray;
++(UIBezierPath*)getEyePath:(NSArray*)pointsArray offset:(CGPoint)offset;
 @end

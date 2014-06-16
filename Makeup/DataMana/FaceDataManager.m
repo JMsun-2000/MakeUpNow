@@ -8,6 +8,7 @@
 
 #import "FaceDataManager.h"
 #import <CoreImage/CoreImage.h>
+#import "LeftEyeData.h"
 
 #define ADJUST_FACE_OFFSET_FOR_JAW 0.4f
 #define RATIO_GUESS_EYE_SCOPE 2.0f
@@ -381,9 +382,17 @@ static FaceDataManager *instance = nil;
     }
 }
 
+-(UIImage*)doCorp:(CGRect)corp{
+    CGImageRef croppedImage = CGImageCreateWithImageInRect(self.originalImage.CGImage, corp);
+    UIImage* ret = [UIImage imageWithCGImage:croppedImage];
+    CGImageRelease(croppedImage);
+    return ret;
+}
+
 -(void) saveLeftEyePoint:(NSArray*)points{
     // change the original coordination
     NSMutableArray* originalPoints = [[NSMutableArray alloc] init];
+
         for (int i = 0; i < points.count; i++){
             CGPoint point = [[points objectAtIndex:i] CGPointValue];
             point.x = (point.x - offsetOfShowEyeX)/eyesScaleFactorS2W;
@@ -392,6 +401,24 @@ static FaceDataManager *instance = nil;
         }
     
     [self.leftEye setOutlinePoints:originalPoints];
+    
+    // create bounds
+    CGFloat centerPos = (self.leftEye.position.x + rightEyePosition.x) /2.0f;
+    CGFloat leftBond = faceBounds.origin.x;
+    CGFloat width = centerPos - leftBond;
+    CGFloat topPos = self.leftEye.position.y - width/2.0f;
+    self.leftEye.maskLayerbounds = CGRectMake(leftBond, topPos, width, width);
+    
+    // create
+    self.leftEye.originalImage = [self doCorp:self.leftEye.maskLayerbounds];
+}
+
+-(UIImage*) getLeftEyeMask{
+    return [self.leftEye getMaskImage];
+}
+
+-(CGRect) getLeftEyeBounds{
+    return self.leftEye.maskLayerbounds;
 }
 
 @end
