@@ -369,6 +369,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="colorpallette.png" translatesAutoresizingMaskIntoConstraints="NO" id="rXG-xn-pDg">
+                                <rect key="frame" x="24" y="842" width="200" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -382,6 +386,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XRB-3t-kIq"/>
                     <connections>
+                        <outlet property="colorPalette" destination="rXG-xn-pDg" id="RKf-La-VAW"/>
                         <outlet property="doEyeMaskButton" destination="r5o-Xn-avM" id="dPb-en-WPC"/>
                         <outlet property="imageScrollView" destination="MKq-Gl-Ndv" id="FP8-tw-rmm"/>
                     </connections>
@@ -393,6 +398,7 @@
     </scenes>
     <resources>
         <image name="camera_button.png" width="208" height="197"/>
+        <image name="colorpallette.png" width="333" height="228"/>
         <image name="gallery_button.png" width="236" height="229"/>
         <image name="sample_button.png" width="132" height="129"/>
     </resources>

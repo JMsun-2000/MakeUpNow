@@ -13,6 +13,7 @@
 
 @property (strong) NSMutableArray* outlinePoints;
 @property (strong) UIImage* originalImage;
+@property (strong) UIColor* maskColor;
 @property (assign) CGPoint position;
 @property (assign) CGRect maskLayerbounds;
 

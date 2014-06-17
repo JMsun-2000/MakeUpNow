@@ -167,7 +167,7 @@
         CGPoint point = [[self.rightEyePointsViewArray objectAtIndex:i] center];
         [points addObject:[NSValue valueWithCGPoint:point]];
     }
-    [[FaceDataManager getInstance] setSavedRightEyePoints:points];
+    [[FaceDataManager getInstance] saveRightEyePoint:points];
     
     // left brow
     points = [[NSMutableArray alloc] init];

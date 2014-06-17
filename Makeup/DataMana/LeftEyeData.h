@@ -8,13 +8,17 @@
 
 #import "OrganBase.h"
 
-extern CGFloat const DEFAULT_LEFTEYE_SHADOW_WIDTH;
-extern CGFloat const DEFAULT_LEFTEYE_SHADOW_HEIGHT;
-extern CGFloat const LEFTEYE_REFERENCE_POINT_X;
-extern CGFloat const LEFTEYE_REFERENCE_POINT_Y;
-
-@interface LeftEyeData : OrganBase
+extern CGFloat const DEFAULT_EYE_SHADOW_WIDTH;
+extern CGFloat const DEFAULT_EYE_SHADOW_HEIGHT;
 
 
+@interface LeftEyeData : OrganBase{
+    NSString* curMaskStyleName;
+    int referencePointIndex;
+    CGPoint refrencePointOffset;
+}
 
+
+
+-(UIImage*)getMaskImage;
 @end

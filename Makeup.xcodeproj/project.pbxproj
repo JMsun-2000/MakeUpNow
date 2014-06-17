@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5401194ACBA5006E18FF /* OrganBase.m */; };
 		7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5404194AD05F006E18FF /* LeftEyeData.m */; };
+		7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAB5406194EEC4C006E18FF /* colorpallette.png */; };
+		7BAB540A19502B97006E18FF /* RightEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB540919502B97006E18FF /* RightEyeData.m */; };
+		7BAB540C19503AD9006E18FF /* eyeshadow-test-samples-R.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */; };
 		7BC4210917B5FF0300C79657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210817B5FF0300C79657 /* UIKit.framework */; };
 		7BC4210B17B5FF0300C79657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210A17B5FF0300C79657 /* Foundation.framework */; };
 		7BC4210D17B5FF0300C79657 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210C17B5FF0300C79657 /* CoreGraphics.framework */; };
@@ -63,6 +66,10 @@
 		7BAB5401194ACBA5006E18FF /* OrganBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganBase.m; path = DataMana/OrganBase.m; sourceTree = "<group>"; };
 		7BAB5403194AD05F006E18FF /* LeftEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftEyeData.h; path = DataMana/LeftEyeData.h; sourceTree = "<group>"; };
 		7BAB5404194AD05F006E18FF /* LeftEyeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftEyeData.m; path = DataMana/LeftEyeData.m; sourceTree = "<group>"; };
+		7BAB5406194EEC4C006E18FF /* colorpallette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorpallette.png; sourceTree = "<group>"; };
+		7BAB540819502B97006E18FF /* RightEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightEyeData.h; path = DataMana/RightEyeData.h; sourceTree = "<group>"; };
+		7BAB540919502B97006E18FF /* RightEyeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightEyeData.m; path = DataMana/RightEyeData.m; sourceTree = "<group>"; };
+		7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "eyeshadow-test-samples-R.jpg"; sourceTree = "<group>"; };
 		7BC4210517B5FF0300C79657 /* Makeup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makeup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4210817B5FF0300C79657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BC4210A17B5FF0300C79657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -240,7 +247,9 @@
 		7BC4214A17B608A300C79657 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				7BAB5406194EEC4C006E18FF /* colorpallette.png */,
 				7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */,
+				7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */,
 				7BEB26FB17DC5A6500C649CB /* point.png */,
 				7BC4214D17B60D0900C79657 /* camera_button.png */,
 				7BC4214E17B60D0900C79657 /* sample_button.png */,
@@ -290,6 +299,8 @@
 				7BAB5401194ACBA5006E18FF /* OrganBase.m */,
 				7BAB5403194AD05F006E18FF /* LeftEyeData.h */,
 				7BAB5404194AD05F006E18FF /* LeftEyeData.m */,
+				7BAB540819502B97006E18FF /* RightEyeData.h */,
+				7BAB540919502B97006E18FF /* RightEyeData.m */,
 			);
 			name = DataMana;
 			sourceTree = "<group>";
@@ -380,12 +391,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAB540C19503AD9006E18FF /* eyeshadow-test-samples-R.jpg in Resources */,
 				7BC4211317B5FF0300C79657 /* InfoPlist.strings in Resources */,
 				7BC4212217B5FF0300C79657 /* MainStoryboard.storyboard in Resources */,
 				7BC4214617B6062B00C79657 /* Default-568h@2x.png in Resources */,
 				7BC4214717B6062B00C79657 /* Default.png in Resources */,
 				7BC4214817B6062B00C79657 /* Default@2x.png in Resources */,
 				7BC4214C17B6099500C79657 /* gallery_button.png in Resources */,
+				7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */,
 				7BC4214F17B60D0900C79657 /* camera_button.png in Resources */,
 				7BC4215017B60D0900C79657 /* sample_button.png in Resources */,
 				7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */,
@@ -430,6 +443,7 @@
 				7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */,
 				7BC4216A17B61FB300C79657 /* PhotoChooseViewController.m in Sources */,
 				7BC4217317BE1C3D00C79657 /* AlbumContentsTableViewCell.m in Sources */,
+				7BAB540A19502B97006E18FF /* RightEyeData.m in Sources */,
 				7BC4217617BE22FF00C79657 /* ThumbnailImageView.m in Sources */,
 				7BC4223117D3095700C79657 /* FaceDataManager.m in Sources */,
 				7BC4223517D3174500C79657 /* FaceTracingViewController.m in Sources */,

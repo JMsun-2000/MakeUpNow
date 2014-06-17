@@ -10,6 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @class LeftEyeData;
+@class RightEyeData;
 
 #define FACE_TRACING_POINT_NUM 6
 
@@ -43,7 +44,7 @@
 
 @property (nonatomic, strong) NSMutableArray* savedFacePoints;
 @property (nonatomic, strong) LeftEyeData* leftEye;
-@property (nonatomic, strong) NSMutableArray* savedRightEyePoints;
+@property (nonatomic, strong) RightEyeData* rightEye;
 @property (nonatomic, strong) NSMutableArray* savedLeftBrowPoints;
 @property (nonatomic, strong) NSMutableArray* savedRightBrowPoints;
 @property (nonatomic, strong) NSMutableArray* savedMouthPoints;
@@ -51,7 +52,12 @@
 
 // new
 -(void) saveLeftEyePoint:(NSArray*)points;
+-(void) saveRightEyePoint:(NSArray*)points;
 -(UIImage*) getLeftEyeMask;
+-(UIImage*) getRightEyeMask;
 -(CGRect) getLeftEyeBounds;
+-(CGRect) getRightEyeBounds;
+-(void) setLeftEyeMaskColor:(UIColor*)color;
+-(void) setRightEyeMaskColor:(UIColor*)color;
 
 @end

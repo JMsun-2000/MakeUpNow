@@ -12,5 +12,6 @@
 
 @synthesize outlinePoints;
 @synthesize originalImage;
+@synthesize maskColor;
 
 @end

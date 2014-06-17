@@ -9,6 +9,7 @@
 #import "FaceDataManager.h"
 #import <CoreImage/CoreImage.h>
 #import "LeftEyeData.h"
+#import "RightEyeData.h"
 
 #define ADJUST_FACE_OFFSET_FOR_JAW 0.4f
 #define RATIO_GUESS_EYE_SCOPE 2.0f
@@ -29,7 +30,6 @@ static FaceDataManager *instance = nil;
     CGRect faceBounds;
     // for eye
     
-    CGPoint rightEyePosition;
     CGFloat eyesScaleFactorS2W;
     CGFloat offsetOfShowEyeX;
     CGFloat offsetOfShowEyeY;
@@ -43,7 +43,7 @@ static FaceDataManager *instance = nil;
 
 @synthesize asset;
 @synthesize savedFacePoints;
-@synthesize savedRightEyePoints;
+
 @synthesize savedLeftBrowPoints;
 @synthesize savedRightBrowPoints;
 @synthesize savedMouthPoints;
@@ -63,6 +63,7 @@ static FaceDataManager *instance = nil;
     if (self = [super init]) {
         // create sub data
         self.leftEye = [[LeftEyeData alloc] init];
+        self.rightEye = [[RightEyeData alloc] init];
     }
     
     return self;
@@ -124,13 +125,13 @@ static FaceDataManager *instance = nil;
 -(UIImage*)getEyesPhoto:(CGSize)windowSize
 {
     // get eye distance
-    CGFloat eyeDistance = rightEyePosition.x - self.leftEye.position.x;
+    CGFloat eyeDistance = self.rightEye.position.x - self.leftEye.position.x;
     
     // initial the scale factor
     eyesScaleFactorS2W = 1.0f;
     UIImage *imgReturn;
     
-    CGPoint eyeCenterPoint = [self getCenter:rightEyePosition another:self.leftEye.position];
+    CGPoint eyeCenterPoint = [self getCenter:self.rightEye.position another:self.leftEye.position];
     
     // check the width of screen
     if (eyeDistance * RATIO_GUESS_EYE_SCOPE > windowSize.width){
@@ -234,10 +235,10 @@ static FaceDataManager *instance = nil;
     CGFloat eyeWidth = faceBounds.size.width * 0.2f / 2.0f;
     CGFloat eyeHeight = eyeWidth / 3.0f;
     
-    CGPoint point1 = CGPointMake((rightEyePosition.x - eyeWidth)*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y + eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);    
-    CGPoint point2 = CGPointMake(rightEyePosition.x*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y - eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);
-    CGPoint point3 = CGPointMake((rightEyePosition.x + eyeWidth)*eyesScaleFactorS2W + offsetOfShowEyeX, rightEyePosition.y * eyesScaleFactorS2W + offsetOfShowEyeY);
-    CGPoint point4 = CGPointMake(rightEyePosition.x*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y + eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point1 = CGPointMake((self.rightEye.position.x - eyeWidth)*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y + eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point2 = CGPointMake(self.rightEye.position.x*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y - eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point3 = CGPointMake((self.rightEye.position.x + eyeWidth)*eyesScaleFactorS2W + offsetOfShowEyeX, self.rightEye.position.y * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point4 = CGPointMake(self.rightEye.position.x*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y + eyeHeight) * eyesScaleFactorS2W + offsetOfShowEyeY);
     return [NSArray arrayWithObjects:[NSValue valueWithCGPoint:point1],
             [NSValue valueWithCGPoint:point2],
             [NSValue valueWithCGPoint:point3],
@@ -263,9 +264,9 @@ static FaceDataManager *instance = nil;
 {
     CGFloat eyeWidth = faceBounds.size.width * 0.2f;
     
-    CGPoint point1 = CGPointMake((rightEyePosition.x - eyeWidth / 2.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y - eyeWidth/3.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
-    CGPoint point2 = CGPointMake((rightEyePosition.x+eyeWidth/2.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y - eyeWidth*2.0f/3.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
-    CGPoint point3 = CGPointMake((rightEyePosition.x + eyeWidth*3.0f/4.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (rightEyePosition.y - eyeWidth/2.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point1 = CGPointMake((self.rightEye.position.x - eyeWidth / 2.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y - eyeWidth/3.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point2 = CGPointMake((self.rightEye.position.x+eyeWidth/2.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y - eyeWidth*2.0f/3.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
+    CGPoint point3 = CGPointMake((self.rightEye.position.x + eyeWidth*3.0f/4.0f)*eyesScaleFactorS2W + offsetOfShowEyeX, (self.rightEye.position.y - eyeWidth/2.0f) * eyesScaleFactorS2W + offsetOfShowEyeY);
 
     
     return [NSArray arrayWithObjects:[NSValue valueWithCGPoint:point1],
@@ -276,7 +277,7 @@ static FaceDataManager *instance = nil;
 
 -(NSArray*)getMouthInitialPoints
 {
-    CGFloat mouthDistance = (rightEyePosition.x - self.leftEye.position.x)*eyesScaleFactorS2W/2;
+    CGFloat mouthDistance = (self.rightEye.position.x - self.leftEye.position.x)*eyesScaleFactorS2W/2;
     
     // use eye distance to lock the mouth area
     CGPoint point1 = CGPointMake(mouthPosition.x*eyesScaleFactorS2W - mouthDistance*3.0f/4.0f + offsetOfShowMouthX, mouthPosition.y*eyesScaleFactorS2W +mouthDistance/10.0f + offsetOfShowMouthY);
@@ -367,8 +368,9 @@ static FaceDataManager *instance = nil;
         
         // right eye
         if (faceFeature.hasRightEyePosition){
-            rightEyePosition = faceFeature.rightEyePosition;
-            rightEyePosition.y = originalImageSize.height - rightEyePosition.y;
+            CGPoint pt = faceFeature.rightEyePosition;
+            pt.y = originalImageSize.height - pt.y;
+            self.rightEye.position = pt;
         }
         
         // mouth
@@ -391,19 +393,11 @@ static FaceDataManager *instance = nil;
 
 -(void) saveLeftEyePoint:(NSArray*)points{
     // change the original coordination
-    NSMutableArray* originalPoints = [[NSMutableArray alloc] init];
-
-        for (int i = 0; i < points.count; i++){
-            CGPoint point = [[points objectAtIndex:i] CGPointValue];
-            point.x = (point.x - offsetOfShowEyeX)/eyesScaleFactorS2W;
-            point.y = (point.y - offsetOfShowEyeY)/eyesScaleFactorS2W;
-            [originalPoints addObject:[NSValue valueWithCGPoint:point]];
-        }
-    
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points];
     [self.leftEye setOutlinePoints:originalPoints];
     
     // create bounds
-    CGFloat centerPos = (self.leftEye.position.x + rightEyePosition.x) /2.0f;
+    CGFloat centerPos = (self.leftEye.position.x + self.rightEye.position.x) /2.0f;
     CGFloat leftBond = faceBounds.origin.x;
     CGFloat width = centerPos - leftBond;
     CGFloat topPos = self.leftEye.position.y - width/2.0f;
@@ -413,12 +407,61 @@ static FaceDataManager *instance = nil;
     self.leftEye.originalImage = [self doCorp:self.leftEye.maskLayerbounds];
 }
 
+-(void) saveRightEyePoint:(NSArray*)points
+{
+    // change the original coordination
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points];
+    [self.rightEye setOutlinePoints:originalPoints];
+    
+    // create bounds
+    CGFloat centerPos = (self.leftEye.position.x + self.rightEye.position.x) /2.0f;
+    CGFloat rightBond = faceBounds.origin.x + faceBounds.size.width;
+    CGFloat width = rightBond - centerPos;
+    CGFloat topPos = self.rightEye.position.y - width/2.0f;
+    self.rightEye.maskLayerbounds = CGRectMake(centerPos, topPos, width, width);
+    
+    // create
+    self.rightEye.originalImage = [self doCorp:self.rightEye.maskLayerbounds];
+}
+
+-(NSMutableArray*) convertToOriginalCoord:(NSArray*)points{
+    // change the original coordination
+    NSMutableArray* retPoints = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < points.count; i++){
+        CGPoint point = [[points objectAtIndex:i] CGPointValue];
+        point.x = (point.x - offsetOfShowEyeX)/eyesScaleFactorS2W;
+        point.y = (point.y - offsetOfShowEyeY)/eyesScaleFactorS2W;
+        [retPoints addObject:[NSValue valueWithCGPoint:point]];
+    }
+    
+    return retPoints;
+}
+
 -(UIImage*) getLeftEyeMask{
     return [self.leftEye getMaskImage];
 }
 
+-(UIImage*) getRightEyeMask{
+    return [self.rightEye getMaskImage];
+}
+
 -(CGRect) getLeftEyeBounds{
     return self.leftEye.maskLayerbounds;
+}
+
+-(CGRect) getRightEyeBounds;{
+    return self.rightEye.maskLayerbounds;
+}
+
+-(void) setLeftEyeMaskColor:(UIColor*)color
+{
+    self.leftEye.maskColor = color;
+}
+
+-(void) setRightEyeMaskColor:(UIColor*)color
+{
+    self.rightEye.maskColor = color;
 }
 
 @end

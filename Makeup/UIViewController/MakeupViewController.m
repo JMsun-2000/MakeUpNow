@@ -21,7 +21,10 @@
 @end
 
 @implementation MakeupViewController
-@synthesize imageScrollView, originalImageView, leftEyeMaskImageView;
+@synthesize imageScrollView;
+@synthesize originalImageView;
+@synthesize leftEyeMaskImageView;
+@synthesize rightEyeMaskImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,28 +39,40 @@
 {
     [super viewDidLoad];
 	
+    // init imageview and scrollview
+    [self  initFaceImageView];
+    [self initScrollView];
+    
+    // mask function
+    [self initEyeMaskView];
+}
+
+-(void)initEyeMaskView{
+    // add mask view
+    leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftEyeBounds]];
+    rightEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getRightEyeBounds]];
+    [originalImageView addSubview:leftEyeMaskImageView];
+    [originalImageView addSubview:rightEyeMaskImageView];
+    
+    // add listener
+    [doEyeMaskButton addTarget:self action:@selector(showHideColorPalette) forControlEvents:UIControlEventTouchUpInside];
+    
+    //UITapGestureRecognizer set up
+    UITapGestureRecognizer *colorTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseColor:)];
+    [colorPalette addGestureRecognizer:colorTap];
+}
+
+-(void)initFaceImageView
+{
     UIImage *image = [[FaceDataManager getInstance] getOriginalImage];
-    // Do any additional setup after loading the view from its nib    
-    
-    //Setting up the scrollView
-    imageScrollView.bouncesZoom = YES;
-    imageScrollView.delegate = self;
-    imageScrollView.clipsToBounds = YES;
-    
+    // Do any additional setup after loading the view from its nib
     //Setting up the imageView
     originalImageView = [[UIImageView alloc] initWithImage:image];
     originalImageView.userInteractionEnabled = YES;
-    // add mask view
-    leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftEyeBounds]];
-    [originalImageView addSubview:leftEyeMaskImageView];
     
     //Adding the imageView to the scrollView as subView
     [imageScrollView addSubview:originalImageView];
-    imageScrollView.contentSize = CGSizeMake(originalImageView.bounds.size.width, originalImageView.bounds.size.height);
-    imageScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     
-    //UITapGestureRecognizer set up
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     UITapGestureRecognizer *twoFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTwoFingerTap:)];
     
@@ -67,21 +82,25 @@
     //Adding gesture recognizer
     [originalImageView addGestureRecognizer:doubleTap];
     [originalImageView addGestureRecognizer:twoFingerTap];
+    [originalImageView sizeToFit];
+}
+
+-(void)initScrollView
+{
+    //Setting up the scrollView
+    imageScrollView.bouncesZoom = YES;
+    imageScrollView.delegate = self;
+    imageScrollView.clipsToBounds = YES;
+    imageScrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     
     // calculate minimum scale to perfectly fit image width, and begin at that scale
     float minimumScale = [[FaceDataManager getInstance] getFaceScaledRatio];//This is the minimum scale, set it to whatever you want. 1.0 = default
-    
     
     imageScrollView.maximumZoomScale = 2.0;
     imageScrollView.minimumZoomScale = minimumScale;
     imageScrollView.zoomScale = minimumScale;
     [imageScrollView setContentMode:UIViewContentModeScaleAspectFit];
-    [originalImageView sizeToFit];
     [imageScrollView setContentSize:CGSizeMake(originalImageView.frame.size.width, originalImageView.frame.size.height)];
-    
-    // add listener
-    // Add mask button
-    [doEyeMaskButton addTarget:self action:@selector(doMaskEye) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -92,151 +111,60 @@
     originalImageView.frame = initalFrame;
 }
 
--(void)doMaskEye
+-(void)handleChooseColor:(UITapGestureRecognizer*)recognizer
 {
-    UIImage *maskedImage = [[FaceDataManager getInstance] getLeftEyeMask];
-    leftEyeMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+    if(recognizer.state == UIGestureRecognizerStateRecognized){
+        CGPoint point = [recognizer locationInView:recognizer.view];
+        CGSize viewSize = colorPalette.frame.size;
+        CGSize imgSize = colorPalette.image.size;
+        int x = point.x*imgSize.width/viewSize.width;
+        int y = point.y*imgSize.height/viewSize.height;
+        // set color
+        UIColor* color = [self getRGBAFromImage:colorPalette.image atX:x atY:y];
+        if (color == nil){
+            color = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:1.0];
+        }
+        [[FaceDataManager getInstance] setLeftEyeMaskColor:color];
+        [[FaceDataManager getInstance] setRightEyeMaskColor:color];
+        UIImage *maskedImage = [[FaceDataManager getInstance] getLeftEyeMask];
+        leftEyeMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+        maskedImage = [[FaceDataManager getInstance] getRightEyeMask];
+        rightEyeMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+    }
 }
 
--(UIImage*)getLeftEyeMask
+-(void)showHideColorPalette
 {
-    NSMutableArray* leftEyepoints = [[FaceDataManager getInstance] getOriginalLeftEyePoints];
-    CGPoint pointsPos[leftEyepoints.count];
-    // get 4 points
-    for (int i = 0; i < leftEyepoints.count; i++){
-        pointsPos[i] = [[leftEyepoints objectAtIndex:i] CGPointValue];
-    }
-    
-    UIImage *leftEye = [[FaceDataManager getInstance] getOriginalImage];
-    CGRect canvesRect = CGRectMake(0.0f, 0.0f, leftEye.size.width, leftEye.size.height);
-    
-    // Add Color by draw context
-    UIGraphicsBeginImageContext(leftEye.size);
-    CGContextRef oldContext = UIGraphicsGetCurrentContext();
-    [leftEye drawAtPoint:CGPointZero];
-    // save context
-    CGContextSaveGState(oldContext);
-    
-    // Overlay red color
-    CGContextSetBlendMode(oldContext, kCGBlendModeOverlay);
-    // draw red
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddRect(path, NULL, canvesRect);
-    [[UIColor colorWithRed:1.00f green:0.00f blue:0.00f alpha:1.0f] setFill];
-    CGContextAddPath(oldContext, path);
-    CGContextDrawPath(oldContext, kCGPathFill);
-    CGPathRelease(path);
-    
-    // recovery environment and save new Image
-    CGContextRestoreGState(oldContext);
-    UIImage *source = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    // test for step1
-    //return source;
-    
-    // Add alpha mask
-    UIImage *maskOriginal = [UIImage imageNamed:@"eyeshadow-test-samples-L.jpg"];
-    // Scale and rotation mask
-/*    CGFloat curXDist = pointsPos[2].x - pointsPos[0].x;
-    CGFloat curYDist = pointsPos[2].y - pointsPos[0].y;
-    CGFloat curEyeDistance = sqrt((curXDist*curXDist)+(curYDist*curYDist));
-    curXDist = pointsPos[3].x - pointsPos[1].x;
-    curYDist = pointsPos[3].y - pointsPos[1].y;
-    CGFloat curEyeHeight = sqrt((curXDist*curXDist)+(curYDist*curYDist));
-    CGFloat xScaleFactor = curEyeDistance/DEFAULT_LEFTEYE_SHADOW_WIDTH;
-    CGFloat yScaleFactor = curEyeHeight/DEFAULT_LEFTEYE_SHADOW_HEIGHT;
-    CGFloat realWidth = maskOriginal.size.width * xScaleFactor;
-    CGFloat realHeigth = maskOriginal.size.height * yScaleFactor;
-    CGFloat xOffset = LEFTEYE_REFERENCE_POINT_X * xScaleFactor;
-    CGFloat yOffset = LEFTEYE_REFERENCE_POINT_Y * yScaleFactor;
-    xOffset = pointsPos[2].x-xOffset;
-    yOffset = pointsPos[2].y-yOffset;
-    
-    UIGraphicsBeginImageContext(leftEye.size);
-    oldContext = UIGraphicsGetCurrentContext();
-    // save context
-    CGContextSaveGState(oldContext);
-    [[UIColor colorWithWhite:1.0f alpha:1.0f] setFill];
-    UIRectFill(canvesRect);
-    [maskOriginal drawInRect:CGRectMake(xOffset, yOffset, realWidth, realHeigth)];
-    // move the polygon of eye
-    [[BezierCreatorUtils getBezierPath:EYE_POLYGON Points:leftEyepoints] fill];
- 
-    // recovery environment and save new Image
-    CGContextRestoreGState(oldContext);
- */
-    UIImage *maskImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    // test for step2
-    //return maskImage;
-    
-    CGImageRef maskRef = maskImage.CGImage;
-    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
-                                        CGImageGetHeight(maskRef),
-                                        CGImageGetBitsPerComponent(maskRef),
-                                        CGImageGetBitsPerPixel(maskRef),
-                                        CGImageGetBytesPerRow(maskRef),
-                                        CGImageGetDataProvider(maskRef), NULL, false);
-    
-    CGImageRef sourceImage = [source CGImage];
-    CGImageRef imageWithAlpha = sourceImage;
-    if ((CGImageGetAlphaInfo(sourceImage) == kCGImageAlphaNone)
-        || (CGImageGetAlphaInfo(sourceImage) == kCGImageAlphaNoneSkipFirst)
-        || (CGImageGetAlphaInfo(sourceImage) == kCGImageAlphaNoneSkipLast)){
-        imageWithAlpha = CopyImageAndAddAlphaChannel(sourceImage);
-    }
-    
-    CGImageRef masked = CGImageCreateWithMask(imageWithAlpha, mask);
-    CGImageRelease(mask);
-    
-    if (sourceImage != imageWithAlpha) {
-        CGImageRelease(imageWithAlpha);
-    }
-    
-    //Added extra render step to force it to save correct alpha values (not the mask)
-    UIImage* retImage = [UIImage imageWithCGImage:masked];
-    CGImageRelease(masked);
-    
-    UIGraphicsBeginImageContext(retImage.size);
-    [retImage drawAtPoint:CGPointZero];
-    UIImage *newImg = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    retImage = nil;
-    
-    return newImg;
+    colorPalette.hidden = !colorPalette.hidden;
 }
 
-CGImageRef CopyImageAndAddAlphaChannel(CGImageRef sourceImage) {
-    
-    CGImageRef retVal = NULL;
-    
-    size_t width = CGImageGetWidth(sourceImage);
-    
-    size_t height = CGImageGetHeight(sourceImage);
-    
+-(UIColor*)getRGBAFromImage:(UIImage*)image atX:(int)x atY:(int)y
+{
+    CGImageRef imageRef = [image CGImage];
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGContextRef offscreenContext = CGBitmapContextCreate(NULL, width, height,
-                                                          
-                                                          8, 0, colorSpace,   kCGImageAlphaPremultipliedLast );
-    
-    
-    if (offscreenContext != NULL) {
-        
-        CGContextDrawImage(offscreenContext, CGRectMake(0, 0, width, height), sourceImage);
-        
-        retVal = CGBitmapContextCreateImage(offscreenContext);
-        
-        CGContextRelease(offscreenContext);
-        
-    }
-    
+    unsigned char *rawData = (unsigned char*) calloc(height * width * 4, sizeof(unsigned char));
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     CGColorSpaceRelease(colorSpace);
     
-    return retVal;
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(context);
     
+    // Now your rawData contains the image data in the RGBA8888 pixel format.
+    int byteIndex = (bytesPerRow * y) + (x * bytesPerPixel);
+
+    CGFloat red   = (rawData[byteIndex]     * 1.0) / 255.0;
+    CGFloat green = (rawData[byteIndex + 1] * 1.0) / 255.0;
+    CGFloat blue  = (rawData[byteIndex + 2] * 1.0) / 255.0;
+    CGFloat alpha = (rawData[byteIndex + 3] * 1.0) / 255.0;
+        
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];        
 }
 
 - (void)didReceiveMemoryWarning

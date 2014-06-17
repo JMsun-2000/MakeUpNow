@@ -86,6 +86,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[MakeupViewController handleChooseColor:]:MakeupViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "colorPalette.image.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[LeftEyeData getMaskImage]:LeftEyeData.m">
          <PersistentStrings>
             <PersistentString

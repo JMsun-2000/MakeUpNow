@@ -10,6 +10,7 @@
 
 @interface MakeupViewController : UIViewController<UIScrollViewDelegate>{
     IBOutlet UIButton *doEyeMaskButton;
+    IBOutlet UIImageView *colorPalette;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView *imageScrollView;
 
