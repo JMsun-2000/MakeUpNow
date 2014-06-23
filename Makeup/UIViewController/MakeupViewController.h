@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TracingBaseViewController.h"
 
-@interface MakeupViewController : UIViewController<UIScrollViewDelegate>{
-    IBOutlet UIButton *doEyeMaskButton;
+@interface MakeupViewController : TracingBaseViewController<UIScrollViewDelegate>{
+    IBOutlet UIButton *eyeColorButton;
     IBOutlet UIImageView *colorPalette;
+    IBOutlet UISlider* alphaSlider;
+    IBOutlet UIButton *eyeMaskChangeButton;
+    IBOutlet UIButton *mouthColorButton;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView *imageScrollView;
 

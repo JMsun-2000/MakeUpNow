@@ -11,6 +11,7 @@
 
 @class LeftEyeData;
 @class RightEyeData;
+@class MouthData;
 
 #define FACE_TRACING_POINT_NUM 6
 
@@ -45,19 +46,23 @@
 @property (nonatomic, strong) NSMutableArray* savedFacePoints;
 @property (nonatomic, strong) LeftEyeData* leftEye;
 @property (nonatomic, strong) RightEyeData* rightEye;
+@property (nonatomic, strong) MouthData* mouth;
 @property (nonatomic, strong) NSMutableArray* savedLeftBrowPoints;
 @property (nonatomic, strong) NSMutableArray* savedRightBrowPoints;
-@property (nonatomic, strong) NSMutableArray* savedMouthPoints;
 // face original data
 
 // new
 -(void) saveLeftEyePoint:(NSArray*)points;
 -(void) saveRightEyePoint:(NSArray*)points;
+-(void) saveMouthPoint:(NSArray*)points;
 -(UIImage*) getLeftEyeMask;
 -(UIImage*) getRightEyeMask;
+-(UIImage*) getMouthMask;
 -(CGRect) getLeftEyeBounds;
 -(CGRect) getRightEyeBounds;
+-(CGRect) getMouthBounds;
 -(void) setLeftEyeMaskColor:(UIColor*)color;
 -(void) setRightEyeMaskColor:(UIColor*)color;
+-(void) setMouthMaskColor:(UIColor*)color;
 
 @end

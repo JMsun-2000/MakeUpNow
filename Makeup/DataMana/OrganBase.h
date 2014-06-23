@@ -18,5 +18,7 @@
 @property (assign) CGRect maskLayerbounds;
 
 -(UIImage*)getMaskImage;
-
+-(UIImage*) clipMaskScope;
+-(UIImage*) adjustedMaskStyle;
+-(UIImage*) createMaskByMerge:(UIImage*)source maskImage:(UIImage*)maskImage;
 @end

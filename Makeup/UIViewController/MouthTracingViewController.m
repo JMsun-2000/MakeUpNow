@@ -68,7 +68,7 @@
         [points addObject:[NSValue valueWithCGPoint:point]];
     }
     
-    [[FaceDataManager getInstance] setSavedMouthPoints:points];
+    [[FaceDataManager getInstance] saveMouthPoint:points];
 }
 
 - (void)onFeaturePointMoved:(int)tag;

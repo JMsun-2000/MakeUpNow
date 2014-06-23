@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B9CD96F1957D8B700687A0F /* MouthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9CD96E1957D8B700687A0F /* MouthData.m */; };
 		7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5401194ACBA5006E18FF /* OrganBase.m */; };
 		7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5404194AD05F006E18FF /* LeftEyeData.m */; };
 		7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAB5406194EEC4C006E18FF /* colorpallette.png */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B9CD96D1957D8B700687A0F /* MouthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MouthData.h; path = DataMana/MouthData.h; sourceTree = "<group>"; };
+		7B9CD96E1957D8B700687A0F /* MouthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MouthData.m; path = DataMana/MouthData.m; sourceTree = "<group>"; };
 		7BAB5400194ACBA5006E18FF /* OrganBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganBase.h; path = DataMana/OrganBase.h; sourceTree = "<group>"; };
 		7BAB5401194ACBA5006E18FF /* OrganBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganBase.m; path = DataMana/OrganBase.m; sourceTree = "<group>"; };
 		7BAB5403194AD05F006E18FF /* LeftEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftEyeData.h; path = DataMana/LeftEyeData.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				7BAB5404194AD05F006E18FF /* LeftEyeData.m */,
 				7BAB540819502B97006E18FF /* RightEyeData.h */,
 				7BAB540919502B97006E18FF /* RightEyeData.m */,
+				7B9CD96D1957D8B700687A0F /* MouthData.h */,
+				7B9CD96E1957D8B700687A0F /* MouthData.m */,
 			);
 			name = DataMana;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */,
 				7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */,
 				7BC7CB9817FFF5610012B66A /* PloygonUIView.m in Sources */,
+				7B9CD96F1957D8B700687A0F /* MouthData.m in Sources */,
 				7BC7CB9B180018940012B66A /* PloylineUIView.m in Sources */,
 				7BC7CB9E18002C260012B66A /* PloyBaseUIView.m in Sources */,
 				7BC7CBA2180140170012B66A /* MouthTracingViewController.m in Sources */,

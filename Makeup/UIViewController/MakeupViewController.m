@@ -13,7 +13,9 @@
 
 
 
-@interface MakeupViewController ()
+@interface MakeupViewController (){
+    int curentColorSetter;
+}
 @property (atomic) UIImageView *originalImageView;
 @property (atomic) UIImageView *leftEyeMaskImageView;
 @property (atomic) UIImageView *rightEyeMaskImageView;
@@ -25,6 +27,7 @@
 @synthesize originalImageView;
 @synthesize leftEyeMaskImageView;
 @synthesize rightEyeMaskImageView;
+@synthesize mouthMaskImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,15 +54,23 @@
     // add mask view
     leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftEyeBounds]];
     rightEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getRightEyeBounds]];
+    mouthMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getMouthBounds]];
     [originalImageView addSubview:leftEyeMaskImageView];
     [originalImageView addSubview:rightEyeMaskImageView];
+    [originalImageView addSubview:mouthMaskImageView];
     
     // add listener
-    [doEyeMaskButton addTarget:self action:@selector(showHideColorPalette) forControlEvents:UIControlEventTouchUpInside];
+    [eyeColorButton addTarget:self action:@selector(showHideColorPalette:) forControlEvents:UIControlEventTouchUpInside];
+    [mouthColorButton addTarget:self action:@selector(showHideColorPalette:) forControlEvents:UIControlEventTouchUpInside];
     
     //UITapGestureRecognizer set up
     UITapGestureRecognizer *colorTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseColor:)];
     [colorPalette addGestureRecognizer:colorTap];
+    
+    // alpha bar
+    alphaSlider.continuous = YES;
+    alphaSlider.value = 1;
+    [alphaSlider addTarget:self action:@selector(maskAlphaChange) forControlEvents:UIControlEventValueChanged];
 }
 
 -(void)initFaceImageView
@@ -124,6 +135,15 @@
         if (color == nil){
             color = [UIColor colorWithRed:1.0 green:0 blue:0 alpha:1.0];
         }
+
+        [self doMaskWithTag:color];
+    }
+}
+
+-(void)doMaskWithTag:(UIColor*)color
+{
+    if (curentColorSetter == 1){
+        // do eye mask
         [[FaceDataManager getInstance] setLeftEyeMaskColor:color];
         [[FaceDataManager getInstance] setRightEyeMaskColor:color];
         UIImage *maskedImage = [[FaceDataManager getInstance] getLeftEyeMask];
@@ -131,11 +151,29 @@
         maskedImage = [[FaceDataManager getInstance] getRightEyeMask];
         rightEyeMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
     }
+    else if (curentColorSetter == 2){
+        [[FaceDataManager getInstance] setMouthMaskColor:color];
+         UIImage *maskedImage = [[FaceDataManager getInstance] getMouthMask];
+        mouthMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+    }
 }
 
--(void)showHideColorPalette
+-(void)showHideColorPalette:(UIButton*)sender
 {
     colorPalette.hidden = !colorPalette.hidden;
+    curentColorSetter = sender.tag;
+}
+
+-(void)maskAlphaChange
+{
+    float alpha = alphaSlider.value;
+    if (curentColorSetter == 1){
+        leftEyeMaskImageView.alpha = alpha;
+        rightEyeMaskImageView.alpha = alpha;
+    }
+    else if (curentColorSetter == 2){
+        mouthMaskImageView.alpha = alpha;
+    }
 }
 
 -(UIColor*)getRGBAFromImage:(UIImage*)image atX:(int)x atY:(int)y

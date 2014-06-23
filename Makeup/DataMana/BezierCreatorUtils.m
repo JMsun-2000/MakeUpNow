@@ -20,7 +20,7 @@
             ret = [self getBrowPath:pointsArray];
             break;
         case MOUTH_POLYGON:
-            ret = [self getMouthPath:pointsArray];
+            ret = [self getMouthPath:pointsArray offset:CGPointMake(0,0)];
         default:
             break;
     }
@@ -28,7 +28,7 @@
     return ret;
 }
 
-+(UIBezierPath*)getMouthPath:(NSArray*)pointsArray
++(UIBezierPath*)getMouthPath:(NSArray*)pointsArray offset:(CGPoint)offset
 {
     CGPoint pervious;
     UIBezierPath* curBezierPath = [UIBezierPath bezierPath];
@@ -36,6 +36,8 @@
     for (int i = 0; i <= pointCnt; i++){
         // it's a polygon. So must add bezier for the last point line to begin, or it will be straight line by system automatically
         CGPoint p = [[pointsArray objectAtIndex:(i%pointCnt)] CGPointValue];
+        p.x += offset.x;
+        p.y += offset.y;
         if (i == 0){
             [curBezierPath moveToPoint:CGPointMake(p.x, p.y)];
         }
@@ -49,8 +51,8 @@
             if (i < 8 || i > 9){
                 xOffset *= 0.1f;
                 yOffset *= 0.25f;
-             [curBezierPath addCurveToPoint:p controlPoint1:CGPointMake(pervious.x+xOffset, pervious.y+yOffset)  controlPoint2:CGPointMake(p.x-xOffset, p.y-yOffset)];
-             }
+                [curBezierPath addCurveToPoint:p controlPoint1:CGPointMake(pervious.x+xOffset, pervious.y+yOffset)  controlPoint2:CGPointMake(p.x-xOffset, p.y-yOffset)];
+            }
              else{
                  xOffset *= 0.5f;
                 if (xOffset*yOffset < 0.0f){

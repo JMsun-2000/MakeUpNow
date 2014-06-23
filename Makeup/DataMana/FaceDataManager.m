@@ -10,6 +10,7 @@
 #import <CoreImage/CoreImage.h>
 #import "LeftEyeData.h"
 #import "RightEyeData.h"
+#import "MouthData.h"
 
 #define ADJUST_FACE_OFFSET_FOR_JAW 0.4f
 #define RATIO_GUESS_EYE_SCOPE 2.0f
@@ -35,7 +36,6 @@ static FaceDataManager *instance = nil;
     CGFloat offsetOfShowEyeY;
     CGRect corpEyesInPic;
     // for mouth
-    CGPoint mouthPosition;
     CGFloat offsetOfShowMouthX;
     CGFloat offsetOfShowMouthY;
 }
@@ -46,7 +46,7 @@ static FaceDataManager *instance = nil;
 
 @synthesize savedLeftBrowPoints;
 @synthesize savedRightBrowPoints;
-@synthesize savedMouthPoints;
+
 
 +(FaceDataManager *)getInstance
 {
@@ -64,6 +64,7 @@ static FaceDataManager *instance = nil;
         // create sub data
         self.leftEye = [[LeftEyeData alloc] init];
         self.rightEye = [[RightEyeData alloc] init];
+        self.mouth = [[MouthData alloc] init];
     }
     
     return self;
@@ -174,8 +175,8 @@ static FaceDataManager *instance = nil;
     afterScale.height = originalImageSize.height * eyesScaleFactorS2W;
     
     // get the offest to draw on canvas
-    offsetOfShowMouthX = windowSize.width/2.0f - mouthPosition.x * eyesScaleFactorS2W;
-    offsetOfShowMouthY = windowSize.height/2.0f - mouthPosition.y * eyesScaleFactorS2W;
+    offsetOfShowMouthX = windowSize.width/2.0f - self.mouth.position.x * eyesScaleFactorS2W;
+    offsetOfShowMouthY = windowSize.height/2.0f - self.mouth.position.y * eyesScaleFactorS2W;
     
     
     UIGraphicsBeginImageContextWithOptions(windowSize, NO, 0.0);
@@ -280,7 +281,7 @@ static FaceDataManager *instance = nil;
     CGFloat mouthDistance = (self.rightEye.position.x - self.leftEye.position.x)*eyesScaleFactorS2W/2;
     
     // use eye distance to lock the mouth area
-    CGPoint point1 = CGPointMake(mouthPosition.x*eyesScaleFactorS2W - mouthDistance*3.0f/4.0f + offsetOfShowMouthX, mouthPosition.y*eyesScaleFactorS2W +mouthDistance/10.0f + offsetOfShowMouthY);
+    CGPoint point1 = CGPointMake(self.mouth.position.x*eyesScaleFactorS2W - mouthDistance*3.0f/4.0f + offsetOfShowMouthX, self.mouth.position.y*eyesScaleFactorS2W +mouthDistance/10.0f + offsetOfShowMouthY);
     CGPoint point4 = CGPointMake(point1.x + mouthDistance*3.0f/4.0f, point1.y - mouthDistance/5.0f);
     CGPoint point3 = CGPointMake(point4.x - mouthDistance/6.0f, point1.y - mouthDistance*3.0f/10.0f);
     CGPoint point2 = CGPointMake(point3.x - mouthDistance/6.0f, point1.y - mouthDistance/5.0f);
@@ -331,12 +332,6 @@ static FaceDataManager *instance = nil;
     return CGPointMake(offsetOfShowFaceX, offsetOfShowFaceY);
 }
 
--(NSMutableArray*)getOriginalLeftEyePoints
-{
-    
-    return self.leftEye.outlinePoints;
-}
-
 -(void)doFaceDetector
 {
     CGImageRef originalImageRef = [[asset defaultRepresentation] fullResolutionImage];
@@ -375,8 +370,9 @@ static FaceDataManager *instance = nil;
         
         // mouth
         if (faceFeature.hasMouthPosition){
-            mouthPosition = faceFeature.mouthPosition;
-            mouthPosition.y = originalImageSize.height - mouthPosition.y;
+            CGPoint pt = faceFeature.mouthPosition;
+            pt.y = originalImageSize.height - pt.y;
+            self.mouth.position = pt;
         }
         
         // just one face now
@@ -393,7 +389,11 @@ static FaceDataManager *instance = nil;
 
 -(void) saveLeftEyePoint:(NSArray*)points{
     // change the original coordination
-    NSMutableArray* originalPoints = [self convertToOriginalCoord:points];
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points
+                                                          offsetX:offsetOfShowEyeX
+                                                          offsetY:offsetOfShowEyeY
+                                                            ratio:eyesScaleFactorS2W];
+
     [self.leftEye setOutlinePoints:originalPoints];
     
     // create bounds
@@ -410,7 +410,11 @@ static FaceDataManager *instance = nil;
 -(void) saveRightEyePoint:(NSArray*)points
 {
     // change the original coordination
-    NSMutableArray* originalPoints = [self convertToOriginalCoord:points];
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points
+                                                          offsetX:offsetOfShowEyeX
+                                                          offsetY:offsetOfShowEyeY
+                                                            ratio:eyesScaleFactorS2W];
+    
     [self.rightEye setOutlinePoints:originalPoints];
     
     // create bounds
@@ -424,14 +428,34 @@ static FaceDataManager *instance = nil;
     self.rightEye.originalImage = [self doCorp:self.rightEye.maskLayerbounds];
 }
 
--(NSMutableArray*) convertToOriginalCoord:(NSArray*)points{
+-(void) saveMouthPoint:(NSArray*)points
+{
+    // change the original coordination
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points
+                                                          offsetX:offsetOfShowMouthX
+                                                          offsetY:offsetOfShowMouthY
+                                                            ratio:eyesScaleFactorS2W];
+
+    [self.mouth setOutlinePoints:originalPoints];
+    
+    // create bounds
+    CGFloat leftPos = self.leftEye.position.x;
+    CGFloat width = self.rightEye.position.x - self.leftEye.position.x;
+    CGFloat topPos = self.mouth.position.y - width/4.0f;
+    self.mouth.maskLayerbounds = CGRectMake(leftPos, topPos, width, width/2.0f);
+    
+    // create
+    self.mouth.originalImage = [self doCorp:self.mouth.maskLayerbounds];
+}
+
+-(NSMutableArray*) convertToOriginalCoord:(NSArray*)points offsetX:(CGFloat)x offsetY:(CGFloat)y ratio:(CGFloat)ratio{
     // change the original coordination
     NSMutableArray* retPoints = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < points.count; i++){
         CGPoint point = [[points objectAtIndex:i] CGPointValue];
-        point.x = (point.x - offsetOfShowEyeX)/eyesScaleFactorS2W;
-        point.y = (point.y - offsetOfShowEyeY)/eyesScaleFactorS2W;
+        point.x = (point.x - x)/ratio;
+        point.y = (point.y - y)/ratio;
         [retPoints addObject:[NSValue valueWithCGPoint:point]];
     }
     
@@ -446,12 +470,20 @@ static FaceDataManager *instance = nil;
     return [self.rightEye getMaskImage];
 }
 
+-(UIImage*) getMouthMask{
+    return [self.mouth getMaskImage];
+}
+
 -(CGRect) getLeftEyeBounds{
     return self.leftEye.maskLayerbounds;
 }
 
--(CGRect) getRightEyeBounds;{
+-(CGRect) getRightEyeBounds{
     return self.rightEye.maskLayerbounds;
+}
+
+-(CGRect) getMouthBounds{
+    return self.mouth.maskLayerbounds;
 }
 
 -(void) setLeftEyeMaskColor:(UIColor*)color
@@ -463,5 +495,11 @@ static FaceDataManager *instance = nil;
 {
     self.rightEye.maskColor = color;
 }
+
+-(void) setMouthMaskColor:(UIColor*)color
+{
+    self.mouth.maskColor = color;
+}
+
 
 @end

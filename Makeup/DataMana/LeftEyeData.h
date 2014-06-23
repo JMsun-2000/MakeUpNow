@@ -18,7 +18,4 @@ extern CGFloat const DEFAULT_EYE_SHADOW_HEIGHT;
     CGPoint refrencePointOffset;
 }
 
-
-
--(UIImage*)getMaskImage;
 @end
