@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B121CA1195D7DFF007A24FA /* lip-test-sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */; };
 		7B9CD96F1957D8B700687A0F /* MouthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9CD96E1957D8B700687A0F /* MouthData.m */; };
 		7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5401194ACBA5006E18FF /* OrganBase.m */; };
 		7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5404194AD05F006E18FF /* LeftEyeData.m */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lip-test-sample.jpg"; sourceTree = "<group>"; };
 		7B9CD96D1957D8B700687A0F /* MouthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MouthData.h; path = DataMana/MouthData.h; sourceTree = "<group>"; };
 		7B9CD96E1957D8B700687A0F /* MouthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MouthData.m; path = DataMana/MouthData.m; sourceTree = "<group>"; };
 		7BAB5400194ACBA5006E18FF /* OrganBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganBase.h; path = DataMana/OrganBase.h; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				7BAB5406194EEC4C006E18FF /* colorpallette.png */,
 				7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */,
 				7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */,
+				7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */,
 				7BEB26FB17DC5A6500C649CB /* point.png */,
 				7BC4214D17B60D0900C79657 /* camera_button.png */,
 				7BC4214E17B60D0900C79657 /* sample_button.png */,
@@ -405,6 +408,7 @@
 				7BC4214C17B6099500C79657 /* gallery_button.png in Resources */,
 				7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */,
 				7BC4214F17B60D0900C79657 /* camera_button.png in Resources */,
+				7B121CA1195D7DFF007A24FA /* lip-test-sample.jpg in Resources */,
 				7BC4215017B60D0900C79657 /* sample_button.png in Resources */,
 				7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */,
 				7BEB26FC17DC5A6500C649CB /* point.png in Resources */,

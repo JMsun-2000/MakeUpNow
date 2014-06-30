@@ -13,9 +13,7 @@ extern CGFloat const DEFAULT_EYE_SHADOW_HEIGHT;
 
 
 @interface LeftEyeData : OrganBase{
-    NSString* curMaskStyleName;
     int referencePointIndex;
-    CGPoint refrencePointOffset;
 }
 
 @end

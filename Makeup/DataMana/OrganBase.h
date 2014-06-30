@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface OrganBase : NSObject{
+    NSString* curMaskStyleName;
+    CGPoint refrencePointOffset;
 }
 
 @property (strong) NSMutableArray* outlinePoints;
