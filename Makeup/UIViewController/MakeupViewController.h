@@ -15,6 +15,7 @@
     IBOutlet UISlider* alphaSlider;
     IBOutlet UIButton *eyeMaskChangeButton;
     IBOutlet UIButton *mouthColorButton;
+    IBOutlet UIButton *browColorButton;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView *imageScrollView;
 

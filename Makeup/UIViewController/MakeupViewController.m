@@ -20,6 +20,8 @@
 @property (atomic) UIImageView *leftEyeMaskImageView;
 @property (atomic) UIImageView *rightEyeMaskImageView;
 @property (atomic) UIImageView *mouthMaskImageView;
+@property (atomic) UIImageView *leftBrowMaskImageView;
+@property (atomic) UIImageView *rightBrowMaskImageView;
 @end
 
 @implementation MakeupViewController
@@ -28,6 +30,8 @@
 @synthesize leftEyeMaskImageView;
 @synthesize rightEyeMaskImageView;
 @synthesize mouthMaskImageView;
+@synthesize leftBrowMaskImageView;
+@synthesize rightBrowMaskImageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,21 +51,28 @@
     [self initScrollView];
     
     // mask function
-    [self initEyeMaskView];
+    [self initAllMaskView];
 }
 
--(void)initEyeMaskView{
+-(void)initAllMaskView{
     // add mask view
     leftEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftEyeBounds]];
     rightEyeMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getRightEyeBounds]];
     mouthMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getMouthBounds]];
+    leftBrowMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getLeftBrowBounds]];
+    rightBrowMaskImageView = [[UIImageView alloc] initWithFrame:[[FaceDataManager getInstance] getRightBrowBounds]];
+    
     [originalImageView addSubview:leftEyeMaskImageView];
     [originalImageView addSubview:rightEyeMaskImageView];
     [originalImageView addSubview:mouthMaskImageView];
+    [originalImageView addSubview:leftBrowMaskImageView];
+    [originalImageView addSubview:rightBrowMaskImageView];
     
     // add listener
     [eyeColorButton addTarget:self action:@selector(showHideColorPalette:) forControlEvents:UIControlEventTouchUpInside];
     [mouthColorButton addTarget:self action:@selector(showHideColorPalette:) forControlEvents:UIControlEventTouchUpInside];
+    [browColorButton addTarget:self action:@selector(showHideColorPalette:) forControlEvents:UIControlEventTouchUpInside];
+                        
     
     //UITapGestureRecognizer set up
     UITapGestureRecognizer *colorTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleChooseColor:)];
@@ -155,6 +166,14 @@
         [[FaceDataManager getInstance] setMouthMaskColor:color];
          UIImage *maskedImage = [[FaceDataManager getInstance] getMouthMask];
         mouthMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+    }
+    else if (curentColorSetter == 3){
+        [[FaceDataManager getInstance] setLeftBrowMaskColor:color];
+        [[FaceDataManager getInstance] setRightBrowMaskColor:color];
+        UIImage *maskedImage = [[FaceDataManager getInstance] getLeftBrowMask];
+        leftBrowMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
+        maskedImage = [[FaceDataManager getInstance] getRightBrowMask];
+        rightBrowMaskImageView.backgroundColor = [UIColor colorWithPatternImage:maskedImage];
     }
 }
 

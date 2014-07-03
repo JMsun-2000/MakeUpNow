@@ -8,18 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 #import "AlbumContentsTableViewCell.h"
 
 @interface PhotoChooseViewController : UIViewController
-           <UITableViewDelegate, UITableViewDataSource, AlbumContentsTableViewCellSelectionDelegate>
+           <UITableViewDelegate, UITableViewDataSource, AlbumContentsTableViewCellSelectionDelegate,
+            UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
     IBOutlet UIView *albumPopupUIView;
     IBOutlet UIImageView *openGallaryButton;
     IBOutlet UITableView *photoTableView;
     IBOutlet UIButton *selectButton;
+    IBOutlet UIImageView *takePhotoButton;
     ALAssetsLibrary *assetsLibrary;
     NSMutableArray *groups;
     NSMutableArray *assets;
     int selectedIndex;
 }
+
+-(IBAction)takePhoto;
 @end

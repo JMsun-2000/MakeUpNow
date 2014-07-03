@@ -38,8 +38,8 @@
                                     <constraint firstAttribute="width" constant="85" id="dkv-K1-rCL"/>
                                 </constraints>
                             </imageView>
-                            <imageView tag="2" contentMode="scaleToFill" image="camera_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-M1-85K">
-                                <rect key="frame" x="342" y="894" width="85" height="85"/>
+                            <imageView tag="2" contentMode="scaleToFill" misplaced="YES" image="camera_button.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-M1-85K">
+                                <rect key="frame" x="327" y="746" width="85" height="85"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="Lwb-qx-j0q"/>
                                 </constraints>
@@ -110,6 +110,14 @@
                                     <constraint firstItem="aCl-DG-GDy" firstAttribute="top" secondItem="Hk9-OA-rKh" secondAttribute="top" constant="8" id="wIh-uc-1rO"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBO-Nh-Dcb">
+                                <rect key="frame" x="327" y="939" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.44705885648727417" green="0.44313728809356689" blue="0.46274513006210327" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,6 +149,7 @@
                         <outlet property="openGallaryButton" destination="E27-6r-kkQ" id="MmM-1a-yUi"/>
                         <outlet property="photoTableView" destination="aCl-DG-GDy" id="oZv-ll-H4x"/>
                         <outlet property="selectButton" destination="Pzi-6b-EAp" id="IN8-eG-GGd"/>
+                        <outlet property="takePhotoButton" destination="ZIX-M1-85K" id="lmY-M3-lyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
@@ -388,6 +397,13 @@
                                 <rect key="frame" x="322" y="974" width="124" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H7-KA-dhi">
+                                <rect key="frame" x="253" y="937" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="brows">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLJ-Jt-i30">
                                 <rect key="frame" x="262" y="974" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -454,6 +470,7 @@
                     <navigationItem key="navigationItem" id="XRB-3t-kIq"/>
                     <connections>
                         <outlet property="alphaSlider" destination="QjR-7l-DEc" id="ze2-z1-ZI7"/>
+                        <outlet property="browColorButton" destination="9H7-KA-dhi" id="McI-l1-PWi"/>
                         <outlet property="colorPalette" destination="rXG-xn-pDg" id="RKf-La-VAW"/>
                         <outlet property="eyeColorButton" destination="r5o-Xn-avM" id="B09-vS-7VI"/>
                         <outlet property="eyeMaskChangeButton" destination="Vsk-N7-48T" id="Xul-bX-67C"/>

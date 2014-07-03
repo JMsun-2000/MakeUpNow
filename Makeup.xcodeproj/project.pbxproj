@@ -51,6 +51,11 @@
 		7BEB26FC17DC5A6500C649CB /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BEB26FB17DC5A6500C649CB /* point.png */; };
 		7BEB26FF17DC5A9000C649CB /* MarkupDotUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB26FE17DC5A9000C649CB /* MarkupDotUIView.m */; };
 		7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB270117DC868B00C649CB /* EyesTracingViewController.m */; };
+		7BEF46E2196172AA007506B3 /* LeftBrowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF46E1196172AA007506B3 /* LeftBrowData.m */; };
+		7BEF46E5196172D1007506B3 /* RightBrowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF46E4196172D1007506B3 /* RightBrowData.m */; };
+		7BEF46EE19640F80007506B3 /* brows-test-sample-L.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */; };
+		7BEF46EF19640F80007506B3 /* brows-test-sample-R.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */; };
+		7BEF47031965478F007506B3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEF47021965478F007506B3 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +136,13 @@
 		7BEB26FE17DC5A9000C649CB /* MarkupDotUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarkupDotUIView.m; path = UIElements/MarkupDotUIView.m; sourceTree = "<group>"; };
 		7BEB270017DC868B00C649CB /* EyesTracingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EyesTracingViewController.h; path = UIViewController/EyesTracingViewController.h; sourceTree = "<group>"; };
 		7BEB270117DC868B00C649CB /* EyesTracingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EyesTracingViewController.m; path = UIViewController/EyesTracingViewController.m; sourceTree = "<group>"; };
+		7BEF46E0196172AA007506B3 /* LeftBrowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftBrowData.h; path = DataMana/LeftBrowData.h; sourceTree = "<group>"; };
+		7BEF46E1196172AA007506B3 /* LeftBrowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftBrowData.m; path = DataMana/LeftBrowData.m; sourceTree = "<group>"; };
+		7BEF46E3196172D1007506B3 /* RightBrowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightBrowData.h; path = DataMana/RightBrowData.h; sourceTree = "<group>"; };
+		7BEF46E4196172D1007506B3 /* RightBrowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightBrowData.m; path = DataMana/RightBrowData.m; sourceTree = "<group>"; };
+		7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brows-test-sample-L.jpg"; sourceTree = "<group>"; };
+		7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brows-test-sample-R.jpg"; sourceTree = "<group>"; };
+		7BEF47021965478F007506B3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BEF47031965478F007506B3 /* MobileCoreServices.framework in Frameworks */,
 				7BEB26F817D5FB3600C649CB /* CoreImage.framework in Frameworks */,
 				7BC4216F17BDC7E400C79657 /* AssetsLibrary.framework in Frameworks */,
 				7BC4210917B5FF0300C79657 /* UIKit.framework in Frameworks */,
@@ -184,6 +197,7 @@
 		7BC4210717B5FF0300C79657 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7BEF47021965478F007506B3 /* MobileCoreServices.framework */,
 				7BC4210817B5FF0300C79657 /* UIKit.framework */,
 				7BC4210A17B5FF0300C79657 /* Foundation.framework */,
 				7BC4210C17B5FF0300C79657 /* CoreGraphics.framework */,
@@ -255,6 +269,8 @@
 				7BAB5406194EEC4C006E18FF /* colorpallette.png */,
 				7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */,
 				7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */,
+				7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */,
+				7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */,
 				7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */,
 				7BEB26FB17DC5A6500C649CB /* point.png */,
 				7BC4214D17B60D0900C79657 /* camera_button.png */,
@@ -309,6 +325,10 @@
 				7BAB540919502B97006E18FF /* RightEyeData.m */,
 				7B9CD96D1957D8B700687A0F /* MouthData.h */,
 				7B9CD96E1957D8B700687A0F /* MouthData.m */,
+				7BEF46E0196172AA007506B3 /* LeftBrowData.h */,
+				7BEF46E1196172AA007506B3 /* LeftBrowData.m */,
+				7BEF46E3196172D1007506B3 /* RightBrowData.h */,
+				7BEF46E4196172D1007506B3 /* RightBrowData.m */,
 			);
 			name = DataMana;
 			sourceTree = "<group>";
@@ -411,7 +431,9 @@
 				7B121CA1195D7DFF007A24FA /* lip-test-sample.jpg in Resources */,
 				7BC4215017B60D0900C79657 /* sample_button.png in Resources */,
 				7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */,
+				7BEF46EE19640F80007506B3 /* brows-test-sample-L.jpg in Resources */,
 				7BEB26FC17DC5A6500C649CB /* point.png in Resources */,
+				7BEF46EF19640F80007506B3 /* brows-test-sample-R.jpg in Resources */,
 				7BC7CBAE1802F3A30012B66A /* eyeshadow-test-samples-L.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +473,7 @@
 				7BC4211917B5FF0300C79657 /* AppDelegate.m in Sources */,
 				7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */,
 				7BC4216A17B61FB300C79657 /* PhotoChooseViewController.m in Sources */,
+				7BEF46E5196172D1007506B3 /* RightBrowData.m in Sources */,
 				7BC4217317BE1C3D00C79657 /* AlbumContentsTableViewCell.m in Sources */,
 				7BAB540A19502B97006E18FF /* RightEyeData.m in Sources */,
 				7BC4217617BE22FF00C79657 /* ThumbnailImageView.m in Sources */,
@@ -467,6 +490,7 @@
 				7BC7CBA6180142A00012B66A /* TracingBaseViewController.m in Sources */,
 				7BC7CBA9180161A80012B66A /* BezierCreatorUtils.m in Sources */,
 				7BC7CBAC1801AB560012B66A /* MakeupViewController.m in Sources */,
+				7BEF46E2196172AA007506B3 /* LeftBrowData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

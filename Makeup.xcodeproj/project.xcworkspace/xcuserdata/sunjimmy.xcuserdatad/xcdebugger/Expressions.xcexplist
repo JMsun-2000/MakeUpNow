@@ -22,15 +22,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MakeupViewController handleChooseColor:]:MakeupViewController.m">
+         contextName = "-[PhotoChooseViewController chooseThisPhoto:]:PhotoChooseViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "colorPalette.image.size">
+               value = "[assetRepresentation fullResolutionImage]">
+            </PersistentString>
+            <PersistentString
+               value = "[asset defaultRepresentation]">
+            </PersistentString>
+            <PersistentString
+               value = "[asset thumbnail]">
+            </PersistentString>
+            <PersistentString
+               value = "[assetRepresentation fullScreenImage]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[FaceDataManager getFacePhoto:]:FaceDataManager.m">
@@ -43,25 +49,6 @@
             </PersistentString>
             <PersistentString
                value = "img.size">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "pointsValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "main:main.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[FaceDataManager getEyesPhoto:]:FaceDataManager.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "eyeDistance">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -82,24 +69,48 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PhotoChooseViewController chooseThisPhoto:]:PhotoChooseViewController.m">
+         contextName = "main:main.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MakeupViewController handleChooseColor:]:MakeupViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[assetRepresentation fullResolutionImage]">
-            </PersistentString>
-            <PersistentString
-               value = "[asset defaultRepresentation]">
-            </PersistentString>
-            <PersistentString
-               value = "[asset thumbnail]">
-            </PersistentString>
-            <PersistentString
-               value = "[assetRepresentation fullScreenImage]">
+               value = "colorPalette.image.size">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
+         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager getEyesPhoto:]:FaceDataManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "eyeDistance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pointsValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MakeupViewController initAllMaskView]:MakeupViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[FaceDataManager getInstance]">
+            </PersistentString>
+            <PersistentString
+               value = "[[FaceDataManager getInstance] getRightBrowBounds]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[LeftEyeData getMaskImage]:LeftEyeData.m">
@@ -125,6 +136,17 @@
          <PersistentStrings>
             <PersistentString
                value = "tmpCell">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager saveRightBrowPoint:]:FaceDataManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.rightBrow">
+            </PersistentString>
+            <PersistentString
+               value = "self.leftBrow">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

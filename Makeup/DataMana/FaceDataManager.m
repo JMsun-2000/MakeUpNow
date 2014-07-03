@@ -11,6 +11,8 @@
 #import "LeftEyeData.h"
 #import "RightEyeData.h"
 #import "MouthData.h"
+#import "LeftBrowData.h"
+#import "RightBrowData.h"
 
 #define ADJUST_FACE_OFFSET_FOR_JAW 0.4f
 #define RATIO_GUESS_EYE_SCOPE 2.0f
@@ -18,7 +20,7 @@
 static FaceDataManager *instance = nil;
 
 @interface FaceDataManager()
-@property (nonatomic, strong) UIImage* originalImage;
+
 @end
 
 @implementation FaceDataManager{
@@ -44,10 +46,6 @@ static FaceDataManager *instance = nil;
 @synthesize asset;
 @synthesize savedFacePoints;
 
-@synthesize savedLeftBrowPoints;
-@synthesize savedRightBrowPoints;
-
-
 +(FaceDataManager *)getInstance
 {
     if (instance == nil){
@@ -65,6 +63,8 @@ static FaceDataManager *instance = nil;
         self.leftEye = [[LeftEyeData alloc] init];
         self.rightEye = [[RightEyeData alloc] init];
         self.mouth = [[MouthData alloc] init];
+        self.leftBrow = [[LeftBrowData alloc] init];
+        self.rightBrow = [[RightBrowData alloc]init];
     }
     
     return self;
@@ -448,6 +448,49 @@ static FaceDataManager *instance = nil;
     self.mouth.originalImage = [self doCorp:self.mouth.maskLayerbounds];
 }
 
+-(void)saveLeftBrowPoint:(NSArray*)points
+{
+    // change the original coordination, brow using same view as eye
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points
+                                                          offsetX:offsetOfShowEyeX
+                                                          offsetY:offsetOfShowEyeY
+                                                            ratio:eyesScaleFactorS2W];
+    
+    [self.leftBrow setOutlinePoints:originalPoints];
+    
+    // create bounds
+    CGFloat centerPos = (self.leftEye.position.x + self.rightEye.position.x) /2.0f;
+    CGFloat leftBond = faceBounds.origin.x;
+    CGFloat width = centerPos - leftBond;
+    CGFloat topPos = [[originalPoints objectAtIndex:2] CGPointValue].y - width/4.0f;
+    self.leftBrow.maskLayerbounds = CGRectMake(leftBond, topPos, width, width/2.0f);
+    
+    // create
+    self.leftBrow.originalImage = [self doCorp:self.leftBrow.maskLayerbounds];
+}
+
+-(void)saveRightBrowPoint:(NSArray*)points
+{
+    // change the original coordination, brow using same view as eye
+    NSMutableArray* originalPoints = [self convertToOriginalCoord:points
+                                                          offsetX:offsetOfShowEyeX
+                                                          offsetY:offsetOfShowEyeY
+                                                            ratio:eyesScaleFactorS2W];
+    
+    [self.rightBrow setOutlinePoints:originalPoints];
+    
+    // create bounds
+    CGFloat centerPos = (self.leftEye.position.x + self.rightEye.position.x) /2.0f;
+    CGFloat rightBond = faceBounds.origin.x + faceBounds.size.width;
+    CGFloat width = rightBond - centerPos;
+    CGFloat topPos = [[originalPoints objectAtIndex:0] CGPointValue].y - width/4.0f;
+
+    self.rightBrow.maskLayerbounds = CGRectMake(centerPos, topPos, width, width/2.0f);
+    
+    // create
+    self.rightBrow.originalImage = [self doCorp:self.rightBrow.maskLayerbounds];
+}
+
 -(NSMutableArray*) convertToOriginalCoord:(NSArray*)points offsetX:(CGFloat)x offsetY:(CGFloat)y ratio:(CGFloat)ratio{
     // change the original coordination
     NSMutableArray* retPoints = [[NSMutableArray alloc] init];
@@ -474,6 +517,14 @@ static FaceDataManager *instance = nil;
     return [self.mouth getMaskImage];
 }
 
+-(UIImage*) getLeftBrowMask{
+    return [self.leftBrow getMaskImage];
+}
+
+-(UIImage*) getRightBrowMask{
+    return [self.rightBrow getMaskImage];
+}
+
 -(CGRect) getLeftEyeBounds{
     return self.leftEye.maskLayerbounds;
 }
@@ -485,6 +536,15 @@ static FaceDataManager *instance = nil;
 -(CGRect) getMouthBounds{
     return self.mouth.maskLayerbounds;
 }
+
+-(CGRect) getLeftBrowBounds{
+    return self.leftBrow.maskLayerbounds;
+}
+
+-(CGRect) getRightBrowBounds{
+    return self.rightBrow.maskLayerbounds;
+}
+
 
 -(void) setLeftEyeMaskColor:(UIColor*)color
 {
@@ -499,6 +559,16 @@ static FaceDataManager *instance = nil;
 -(void) setMouthMaskColor:(UIColor*)color
 {
     self.mouth.maskColor = color;
+}
+
+-(void) setLeftBrowMaskColor:(UIColor*)color
+{
+    self.leftBrow.maskColor = color;
+}
+
+-(void) setRightBrowMaskColor:(UIColor*)color
+{
+    self.rightBrow.maskColor = color;
 }
 
 

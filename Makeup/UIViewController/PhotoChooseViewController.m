@@ -202,4 +202,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Target/Action
+-(IBAction)takePhoto
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.mediaTypes = @[(NSString*)kUTTypeImage];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerEditedImage];
+    if (!image) image = info[UIImagePickerControllerOriginalImage];
+    
+  //  [FaceDataManager getInstance]set
+}
+
 @end
