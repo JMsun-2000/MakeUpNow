@@ -110,14 +110,6 @@
                                     <constraint firstItem="aCl-DG-GDy" firstAttribute="top" secondItem="Hk9-OA-rKh" secondAttribute="top" constant="8" id="wIh-uc-1rO"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBO-Nh-Dcb">
-                                <rect key="frame" x="327" y="939" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.44705885648727417" green="0.44313728809356689" blue="0.46274513006210327" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

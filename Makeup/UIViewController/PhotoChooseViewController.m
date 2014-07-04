@@ -24,8 +24,11 @@
     [super viewDidLoad];
 	
     // attach click event
-    UITapGestureRecognizer *tapListener = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleButtonTap:)];
-    [openGallaryButton addGestureRecognizer:tapListener];
+    UITapGestureRecognizer *tapGalleryListener = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGalleryButtonTap:)];
+    UITapGestureRecognizer *tapCameraListener = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCameraButtonTap:)];
+    [takePhotoButton addGestureRecognizer:tapCameraListener];
+    [openGallaryButton addGestureRecognizer:tapGalleryListener];
+
     
     // Load photo group from asset Library
     if (!assetsLibrary) {
@@ -90,31 +93,21 @@
 -(void)chooseThisPhoto:(id)target
 {
     ALAsset *asset = [assets objectAtIndex:selectedIndex];
-    [[FaceDataManager getInstance] setAsset:asset];
-
+    CGImageRef originalImageRef = [[asset defaultRepresentation] fullResolutionImage];
     // Get photo and do face detector
-    [[FaceDataManager getInstance] doFaceDetector];
+    [[FaceDataManager getInstance] setChosenPhoto:originalImageRef];
 }
 
--(void)handleButtonTap:(UITapGestureRecognizer *)recognizer
+-(void)handleGalleryButtonTap:(UITapGestureRecognizer *)recognizer
 {
-    UIImageView *imageView = (UIImageView*)recognizer.view;
-    
-    switch(imageView.tag)
-    {
-        case 1:
-        {
-            // open gallery
-            albumPopupUIView.hidden = false;
-            break;
-        }
-        case 2:
-            // open camera
-            break;
-        case 3:
-            // open sample
-            break;
-    }
+    // open gallery
+    albumPopupUIView.hidden = false;
+
+}
+
+-(void)handleCameraButtonTap:(UITapGestureRecognizer *)recognizer
+{
+    [self takePhoto];
 }
 
 #pragma mark -
@@ -203,7 +196,7 @@
 }
 
 #pragma mark - Target/Action
--(IBAction)takePhoto
+-(void)takePhoto
 {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
@@ -223,7 +216,16 @@
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (!image) image = info[UIImagePickerControllerOriginalImage];
     
-  //  [FaceDataManager getInstance]set
+    CGImageRef originalImageRef = image.CGImage;
+    // Get photo and do face detector
+    [[FaceDataManager getInstance] setChosenPhoto:originalImageRef];
+    [self dismissViewControllerAnimated:YES completion:^{
+        // move to next page
+        UIViewController* documentVC = [[FaceTracingViewController alloc] init];
+        [self.navigationController pushViewController:documentVC animated:YES];
+    }];
+
+
 }
 
 @end

@@ -18,10 +18,10 @@
 #define FACE_TRACING_POINT_NUM 6
 
 @interface FaceDataManager : NSObject{
-    ALAsset *asset;
+
 }
 
--(void)doFaceDetector;
+-(void)setChosenPhoto:(CGImageRef)originalImageRef;
 
 +(FaceDataManager*)getInstance;
 -(UIImage*)getOriginalImage;
@@ -43,7 +43,6 @@
 -(CGPoint)getFaceScaledOffset;
 -(NSMutableArray*)getOriginalLeftEyePoints;
 
-@property (nonatomic, retain) ALAsset *asset;
 @property (nonatomic, strong) UIImage* originalImage;
 
 @property (nonatomic, strong) NSMutableArray* savedFacePoints;

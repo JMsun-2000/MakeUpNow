@@ -42,8 +42,6 @@ static FaceDataManager *instance = nil;
     CGFloat offsetOfShowMouthY;
 }
 
-
-@synthesize asset;
 @synthesize savedFacePoints;
 
 +(FaceDataManager *)getInstance
@@ -68,6 +66,17 @@ static FaceDataManager *instance = nil;
     }
     
     return self;
+}
+
+-(void)setChosenPhoto:(CGImageRef)originalImageRef
+{
+    originalImageSize.width = CGImageGetWidth(originalImageRef);
+    originalImageSize.height = CGImageGetHeight(originalImageRef);
+    
+    // don't need it now
+    self.originalImage = [UIImage imageWithCGImage:originalImageRef];
+    CIImage* ciimage = [CIImage imageWithCGImage:originalImageRef];
+    [self doFaceDetector:ciimage];
 }
 
 -(UIImage*)getOriginalImage
@@ -332,15 +341,8 @@ static FaceDataManager *instance = nil;
     return CGPointMake(offsetOfShowFaceX, offsetOfShowFaceY);
 }
 
--(void)doFaceDetector
+-(void)doFaceDetector:(CIImage*)ciimage
 {
-    CGImageRef originalImageRef = [[asset defaultRepresentation] fullResolutionImage];
-    CIImage* ciimage = [CIImage imageWithCGImage:originalImageRef];
-    originalImageSize.width = CGImageGetWidth(originalImageRef);
-    originalImageSize.height = CGImageGetHeight(originalImageRef);
-    
-    // don't need it now
-    self.originalImage = [UIImage imageWithCGImage:originalImageRef];
     
     // initialize face detector
     NSDictionary *detectorOptions = [[NSDictionary alloc] initWithObjectsAndKeys:CIDetectorAccuracyLow, CIDetectorAccuracy, nil];
