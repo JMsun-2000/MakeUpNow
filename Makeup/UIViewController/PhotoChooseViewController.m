@@ -221,8 +221,7 @@
     [[FaceDataManager getInstance] setChosenPhoto:originalImageRef];
     [self dismissViewControllerAnimated:YES completion:^{
         // move to next page
-        UIViewController* documentVC = [[FaceTracingViewController alloc] init];
-        [self.navigationController pushViewController:documentVC animated:YES];
+        [self performSegueWithIdentifier:@"facetracing" sender:nil];
     }];
 
 

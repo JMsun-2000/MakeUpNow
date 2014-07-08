@@ -84,7 +84,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Yk8-9W-DoV" kind="push" id="QjJ-ei-xdm"/>
+                                            <segue destination="Yk8-9W-DoV" kind="push" identifier="facetracing" id="QjJ-ei-xdm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1z-dU-rDo">
@@ -151,7 +151,7 @@
         <!--Face Tracing View Controller-->
         <scene sceneID="jpP-Su-SnH">
             <objects>
-                <viewController id="Yk8-9W-DoV" customClass="FaceTracingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="facetracing" id="Yk8-9W-DoV" customClass="FaceTracingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rkN-d8-qm2"/>
                         <viewControllerLayoutGuide type="bottom" id="UQU-jO-kex"/>
