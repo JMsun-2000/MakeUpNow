@@ -10,15 +10,15 @@
 
 @implementation LeftBrowData
 
-CGFloat const DEFAULT_BROW_SHADOW_WIDTH = 372.0f;
-CGFloat const DEFAULT_BROW_SHADOW_HEIGHT = 150.0f;
-CGFloat const LEFTBROW_REFERENCE_POINT_X = 436.0f;
-CGFloat const LEFTBROW_REFERENCE_POINT_Y = 153.0f;
+CGFloat const DEFAULT_BROW_SHADOW_WIDTH = 371.0f;
+CGFloat const DEFAULT_BROW_SHADOW_HEIGHT = 93.0f;
+CGFloat const LEFTBROW_REFERENCE_POINT_X = 442.0f;
+CGFloat const LEFTBROW_REFERENCE_POINT_Y = 155.0f;
 
 -(instancetype)init{
     self = super.init;
     if (self){
-        curMaskStyleName = @"brows-test-sample-L.jpg";
+        curMaskStyleName = @"brows-test-sample-L-1.jpg";
         referencePointBeginIndex = 2;
         referencePointEndIndex = 0;
         refrencePointOffset = CGPointMake(LEFTBROW_REFERENCE_POINT_X, LEFTBROW_REFERENCE_POINT_Y);

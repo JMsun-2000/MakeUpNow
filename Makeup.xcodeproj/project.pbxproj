@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B121CA1195D7DFF007A24FA /* lip-test-sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */; };
 		7B9CD96F1957D8B700687A0F /* MouthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9CD96E1957D8B700687A0F /* MouthData.m */; };
 		7BAB5402194ACBA5006E18FF /* OrganBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5401194ACBA5006E18FF /* OrganBase.m */; };
 		7BAB5405194AD05F006E18FF /* LeftEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB5404194AD05F006E18FF /* LeftEyeData.m */; };
-		7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAB5406194EEC4C006E18FF /* colorpallette.png */; };
 		7BAB540A19502B97006E18FF /* RightEyeData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB540919502B97006E18FF /* RightEyeData.m */; };
-		7BAB540C19503AD9006E18FF /* eyeshadow-test-samples-R.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */; };
 		7BC4210917B5FF0300C79657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210817B5FF0300C79657 /* UIKit.framework */; };
 		7BC4210B17B5FF0300C79657 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210A17B5FF0300C79657 /* Foundation.framework */; };
 		7BC4210D17B5FF0300C79657 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BC4210C17B5FF0300C79657 /* CoreGraphics.framework */; };
@@ -53,9 +50,12 @@
 		7BEB270217DC868C00C649CB /* EyesTracingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB270117DC868B00C649CB /* EyesTracingViewController.m */; };
 		7BEF46E2196172AA007506B3 /* LeftBrowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF46E1196172AA007506B3 /* LeftBrowData.m */; };
 		7BEF46E5196172D1007506B3 /* RightBrowData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BEF46E4196172D1007506B3 /* RightBrowData.m */; };
-		7BEF46EE19640F80007506B3 /* brows-test-sample-L.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */; };
-		7BEF46EF19640F80007506B3 /* brows-test-sample-R.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */; };
 		7BEF47031965478F007506B3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEF47021965478F007506B3 /* MobileCoreServices.framework */; };
+		7BEF4752196E32C3007506B3 /* colorpallette.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF4751196E32C3007506B3 /* colorpallette.png */; };
+		7BEF4757196E3300007506B3 /* brows-test-sample-L-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF4753196E3300007506B3 /* brows-test-sample-L-1.jpg */; };
+		7BEF4758196E3300007506B3 /* brows-test-sample-R-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF4754196E3300007506B3 /* brows-test-sample-R-1.jpg */; };
+		7BEF4759196E3300007506B3 /* eyeshadow-test-samples-R.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF4755196E3300007506B3 /* eyeshadow-test-samples-R.jpg */; };
+		7BEF475A196E3300007506B3 /* lip-test-sample-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEF4756196E3300007506B3 /* lip-test-sample-1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,17 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lip-test-sample.jpg"; sourceTree = "<group>"; };
 		7B9CD96D1957D8B700687A0F /* MouthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MouthData.h; path = DataMana/MouthData.h; sourceTree = "<group>"; };
 		7B9CD96E1957D8B700687A0F /* MouthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MouthData.m; path = DataMana/MouthData.m; sourceTree = "<group>"; };
 		7BAB5400194ACBA5006E18FF /* OrganBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrganBase.h; path = DataMana/OrganBase.h; sourceTree = "<group>"; };
 		7BAB5401194ACBA5006E18FF /* OrganBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrganBase.m; path = DataMana/OrganBase.m; sourceTree = "<group>"; };
 		7BAB5403194AD05F006E18FF /* LeftEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftEyeData.h; path = DataMana/LeftEyeData.h; sourceTree = "<group>"; };
 		7BAB5404194AD05F006E18FF /* LeftEyeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftEyeData.m; path = DataMana/LeftEyeData.m; sourceTree = "<group>"; };
-		7BAB5406194EEC4C006E18FF /* colorpallette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorpallette.png; sourceTree = "<group>"; };
 		7BAB540819502B97006E18FF /* RightEyeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightEyeData.h; path = DataMana/RightEyeData.h; sourceTree = "<group>"; };
 		7BAB540919502B97006E18FF /* RightEyeData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightEyeData.m; path = DataMana/RightEyeData.m; sourceTree = "<group>"; };
-		7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "eyeshadow-test-samples-R.jpg"; sourceTree = "<group>"; };
 		7BC4210517B5FF0300C79657 /* Makeup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Makeup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC4210817B5FF0300C79657 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7BC4210A17B5FF0300C79657 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,9 +137,12 @@
 		7BEF46E1196172AA007506B3 /* LeftBrowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftBrowData.m; path = DataMana/LeftBrowData.m; sourceTree = "<group>"; };
 		7BEF46E3196172D1007506B3 /* RightBrowData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightBrowData.h; path = DataMana/RightBrowData.h; sourceTree = "<group>"; };
 		7BEF46E4196172D1007506B3 /* RightBrowData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightBrowData.m; path = DataMana/RightBrowData.m; sourceTree = "<group>"; };
-		7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brows-test-sample-L.jpg"; sourceTree = "<group>"; };
-		7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "brows-test-sample-R.jpg"; sourceTree = "<group>"; };
 		7BEF47021965478F007506B3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7BEF4751196E32C3007506B3 /* colorpallette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = colorpallette.png; path = Makeup/resource/image/colorpallette.png; sourceTree = "<group>"; };
+		7BEF4753196E3300007506B3 /* brows-test-sample-L-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "brows-test-sample-L-1.jpg"; path = "Makeup/resource/image/brows-test-sample-L-1.jpg"; sourceTree = "<group>"; };
+		7BEF4754196E3300007506B3 /* brows-test-sample-R-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "brows-test-sample-R-1.jpg"; path = "Makeup/resource/image/brows-test-sample-R-1.jpg"; sourceTree = "<group>"; };
+		7BEF4755196E3300007506B3 /* eyeshadow-test-samples-R.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "eyeshadow-test-samples-R.jpg"; path = "Makeup/resource/image/eyeshadow-test-samples-R.jpg"; sourceTree = "<group>"; };
+		7BEF4756196E3300007506B3 /* lip-test-sample-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "lip-test-sample-1.jpg"; path = "Makeup/resource/image/lip-test-sample-1.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,12 +266,12 @@
 		7BC4214A17B608A300C79657 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				7BAB5406194EEC4C006E18FF /* colorpallette.png */,
+				7BEF4753196E3300007506B3 /* brows-test-sample-L-1.jpg */,
+				7BEF4754196E3300007506B3 /* brows-test-sample-R-1.jpg */,
+				7BEF4755196E3300007506B3 /* eyeshadow-test-samples-R.jpg */,
+				7BEF4756196E3300007506B3 /* lip-test-sample-1.jpg */,
+				7BEF4751196E32C3007506B3 /* colorpallette.png */,
 				7BC7CBAD1802F3A30012B66A /* eyeshadow-test-samples-L.jpg */,
-				7BAB540B19503AD9006E18FF /* eyeshadow-test-samples-R.jpg */,
-				7BEF46EC19640F80007506B3 /* brows-test-sample-L.jpg */,
-				7BEF46ED19640F80007506B3 /* brows-test-sample-R.jpg */,
-				7B121CA0195D7DFF007A24FA /* lip-test-sample.jpg */,
 				7BEB26FB17DC5A6500C649CB /* point.png */,
 				7BC4214D17B60D0900C79657 /* camera_button.png */,
 				7BC4214E17B60D0900C79657 /* sample_button.png */,
@@ -419,21 +419,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAB540C19503AD9006E18FF /* eyeshadow-test-samples-R.jpg in Resources */,
+				7BEF4752196E32C3007506B3 /* colorpallette.png in Resources */,
 				7BC4211317B5FF0300C79657 /* InfoPlist.strings in Resources */,
 				7BC4212217B5FF0300C79657 /* MainStoryboard.storyboard in Resources */,
+				7BEF475A196E3300007506B3 /* lip-test-sample-1.jpg in Resources */,
+				7BEF4759196E3300007506B3 /* eyeshadow-test-samples-R.jpg in Resources */,
 				7BC4214617B6062B00C79657 /* Default-568h@2x.png in Resources */,
 				7BC4214717B6062B00C79657 /* Default.png in Resources */,
 				7BC4214817B6062B00C79657 /* Default@2x.png in Resources */,
 				7BC4214C17B6099500C79657 /* gallery_button.png in Resources */,
-				7BAB5407194EEC4C006E18FF /* colorpallette.png in Resources */,
 				7BC4214F17B60D0900C79657 /* camera_button.png in Resources */,
-				7B121CA1195D7DFF007A24FA /* lip-test-sample.jpg in Resources */,
+				7BEF4757196E3300007506B3 /* brows-test-sample-L-1.jpg in Resources */,
 				7BC4215017B60D0900C79657 /* sample_button.png in Resources */,
+				7BEF4758196E3300007506B3 /* brows-test-sample-R-1.jpg in Resources */,
 				7BC4222817BF424C00C79657 /* AlbumContentsTableViewCell.xib in Resources */,
-				7BEF46EE19640F80007506B3 /* brows-test-sample-L.jpg in Resources */,
 				7BEB26FC17DC5A6500C649CB /* point.png in Resources */,
-				7BEF46EF19640F80007506B3 /* brows-test-sample-R.jpg in Resources */,
 				7BC7CBAE1802F3A30012B66A /* eyeshadow-test-samples-L.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

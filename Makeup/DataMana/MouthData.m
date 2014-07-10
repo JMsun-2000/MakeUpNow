@@ -10,15 +10,15 @@
 #import "BezierCreatorUtils.h"
 
 @implementation MouthData
-CGFloat const DEFAULT_MOUTH_SHADOW_WIDTH = 350.0f;
-CGFloat const DEFAULT_MOUTH_SHADOW_HEIGHT = 170.0f;
-CGFloat const MOUTH_REFERENCE_POINT_X = 270.0f;
-CGFloat const MOUTH_REFERENCE_POINT_Y = 56.0f;
+CGFloat const DEFAULT_MOUTH_SHADOW_WIDTH = 426.0f;
+CGFloat const DEFAULT_MOUTH_SHADOW_HEIGHT = 167.0f;
+CGFloat const MOUTH_REFERENCE_POINT_X = 271.0f;
+CGFloat const MOUTH_REFERENCE_POINT_Y = 54.0f;
 
 -(instancetype)init{
     self = super.init;
     if (self){
-        curMaskStyleName = @"lip-test-sample.jpg";
+        curMaskStyleName = @"lip-test-sample-1.jpg";
         refrencePointOffset = CGPointMake(MOUTH_REFERENCE_POINT_X, MOUTH_REFERENCE_POINT_Y);
         
     }
