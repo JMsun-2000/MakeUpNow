@@ -20,6 +20,7 @@
     IBOutlet UITableView *photoTableView;
     IBOutlet UIButton *selectButton;
     IBOutlet UIImageView *takePhotoButton;
+    IBOutlet UIButton *testButton;
     ALAssetsLibrary *assetsLibrary;
     NSMutableArray *groups;
     NSMutableArray *assets;

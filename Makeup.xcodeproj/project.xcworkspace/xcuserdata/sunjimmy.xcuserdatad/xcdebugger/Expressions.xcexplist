@@ -28,14 +28,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "pointsValue">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[FaceDataManager setAsset:]:FaceDataManager.m">
          <PersistentStrings>
             <PersistentString
@@ -45,6 +37,9 @@
                value = "self.originalImage.CIImage">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
       </ContextState>
       <ContextState
          contextName = "-[FaceTracingViewController viewWillAppear:]:FaceTracingViewController.m">
@@ -74,9 +69,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
-      </ContextState>
-      <ContextState
          contextName = "-[MakeupViewController initAllMaskView]:MakeupViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -88,7 +80,26 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[EyesTracingViewController viewDidLoad]:EyesTracingViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[PhotoChooseViewController imagePickerController:didFinishPickingMediaWithInfo:]:PhotoChooseViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[TestFaceTracingViewController CreateDetectorResult:]:TestFaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_faceBounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TestFaceTracingViewController viewDidLoad]:TestFaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "afterconverted.size">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[LeftEyeData getMaskImage]:LeftEyeData.m">
@@ -122,6 +133,20 @@
          <PersistentStrings>
             <PersistentString
                value = "faceImageView.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TestFaceTracingViewController detectorFacefromPhoto:]:TestFaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "photo.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.m_scaledImage.size">
+            </PersistentString>
+            <PersistentString
+               value = "self.sizeAfterScale">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -170,7 +195,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[FaceDataManager doFaceDetector]:FaceDataManager.m">
+         contextName = "-[FaceTracingViewController saveAllPoints]:FaceTracingViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pointsValue">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

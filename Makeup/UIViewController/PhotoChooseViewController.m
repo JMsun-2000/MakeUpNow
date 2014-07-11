@@ -10,6 +10,7 @@
 #include <AssetsLibrary/AssetsLibrary.h>
 #import "FaceDataManager.h"
 #import "FaceTracingViewController.h"
+#import "TestFaceTracingViewController.h"
 
 @interface PhotoChooseViewController ()
 
@@ -96,6 +97,16 @@
     CGImageRef originalImageRef = [[asset defaultRepresentation] fullResolutionImage];
     // Get photo and do face detector
     [[FaceDataManager getInstance] setChosenPhoto:originalImageRef];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"testFaceDetector"]){
+        ALAsset *asset = [assets objectAtIndex:selectedIndex];
+        CGImageRef originalImageRef = [[asset defaultRepresentation] fullResolutionImage];
+        TestFaceTracingViewController *destViewController = segue.destinationViewController;
+        destViewController.faceRef = originalImageRef;
+    }
 }
 
 -(void)handleGalleryButtonTap:(UITapGestureRecognizer *)recognizer
